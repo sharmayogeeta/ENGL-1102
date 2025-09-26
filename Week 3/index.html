@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGL 1102 Week 3: Advanced Review of Sources</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .slide {
+            background: white;
+            margin: 20px 0;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            min-height: 500px;
+        }
+        .title-slide {
+            text-align: center;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+        .title-slide h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .title-slide h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        .title-slide h3 {
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            font-size: 1.8em;
+        }
+        h3 {
+            color: #7f8c8d;
+            font-size: 1.4em;
+        }
+        .objectives {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+        }
+        .example-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #f1c40f;
+        }
+        .tip-box {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #17a2b8;
+        }
+        .warning-box {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #dc3545;
+        }
+        .success-box {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #28a745;
+        }
+        ul, ol {
+            line-height: 1.8;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .checklist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .checklist-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+        .navigation {
+			position: fixed;
+			top: 20px;
+			right: 20px;
+			background: rgba(0,0,0,0.2); /* very transparent */
+			color: white;
+			padding: 15px;
+			border-radius: 10px;
+			z-index: 1000;
+			transition: background 0.3s; /* smooth fade */
+		}
+		
+		.navigation:hover {
+			background: rgba(0,0,0,0.7); /* more visible on hover */
+		}
+		
+		.navigation a {
+			color: rgba(255,255,255,0.7); /* semi-transparent text */
+			text-decoration: none;
+			display: block;
+			margin: 5px 0;
+			padding: 5px 10px;
+			border-radius: 5px;
+			transition: background 0.3s, color 0.3s;
+		}
+		
+		.navigation a:hover {
+			background: rgba(255,255,255,0.2); 
+			color: #fff; /* make text fully visible */
+		}
+        .craap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .craap-item {
+            background: #f7f7f7;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 4px solid #3498db;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #3498db;
+            color: white;
+        }
+        .comparison-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+        .code-block {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            background: #fff59d;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <strong>Quick Navigation</strong>
+		<a href="#slide1">Title</a>
+		<a href="#slide15">Recap</a>
+        <a href="#slide2">Introduction</a>
+        <a href="#slide3">Literature Review</a>
+        <a href="#slide4">Source Analysis</a>
+        <a href="#slide5">CRAAP Test</a>
+        <a href="#slide6">SIFT Method</a>
+        <a href="#slide7">Paraphrasing</a>
+        <a href="#slide8">Synthesis</a>
+        <a href="#slide9">Research Gaps</a>
+        <a href="#slide10">Gap Statements</a>
+        <a href="#slide11">Assignment</a>
+        <a href="#slide12">Summary</a>
+		<a href="#slide13">Questions</a>
+		<a href="#slide14">Answers</a>
+    </div>
+
+    <div class="container">
+        <!-- Slide 1: Title Slide -->
+        <!-- Slide 1: Title -->
+        <div class="slide active" id="slide1">
+            <h1>ENGL 1102: English Composition 2</h1>
+            <div style="text-align: center; margin-top: 50px;">
+                <h2 style="border: none; color: #3498db;">Week 3: Advanced Review of Sources</h2>
+                <p style="font-size: 1.3em; margin-top: 30px; color: #7f8c8d;">Literature Review • Analysis • Paraphrasing • Synthesis • Gap Identification</p>
+                <div style="margin-top: 50px;">
+                    <p><strong>Instructor:</strong> Yogeeta Sharma</p>
+                    <p><strong>University of the People</strong></p>
+                </div>
+            </div>
+            <div class="instructor-note">
+                <strong>Instructor Note:</strong> Welcome to Week 3! Today we'll build on our source evaluation skills and learn advanced techniques for literature review and synthesis.
+            </div>
+        </div>
+
+        <!-- Slide 2: Week 2 Recap -->
+        <div class="slide" id="slide15">
+            <h1>📚 Week 2 Recap</h1>
+            <h2>What We Accomplished Last Week:</h2>
+            <ul>
+                <li><strong>Source Selection:</strong> Found 5 credible academic sources</li>
+                <li><strong>Basic Evaluation:</strong> Assessed credibility and relevance</li>
+                <li><strong>Research Skills:</strong> Used databases and search strategies</li>
+                <li><strong>Citation Basics:</strong> Proper formatting and documentation</li>
+            </ul>
+            
+            <h2>Key Takeaways:</h2>
+            <div class="example-box">
+                <h4>Remember the Source Hierarchy:</h4>
+                <ol>
+                    <li>Peer-reviewed journal articles</li>
+                    <li>Academic books and book chapters</li>
+                    <li>Conference proceedings</li>
+                    <li>Government and institutional reports</li>
+                    <li>Reputable news sources (with caution)</li>
+                </ol>
+            </div>
+            
+            <div class="instructor-note">
+                <strong>Instructor Note:</strong> If students struggled with source selection last week, this is a good time to address common issues.
+            </div>
+        </div>
+
+        <!-- Slide 2: Unit Overview and Learning Objectives -->
+        <div class="slide" id="slide2">
+            <h1>Welcome to Unit 3: Advanced Review of Sources</h1>
+            
+            <div class="objectives">
+                <h2>Learning Objectives</h2>
+                <p>By the end of this unit, you will be able to:</p>
+                <ol>
+                    <li><strong>Analyze and critically evaluate</strong> academic sources for quality, relevance, and credibility</li>
+                    <li><strong>Apply paraphrasing techniques</strong> to avoid plagiarism while maintaining meaning</li>
+                    <li><strong>Synthesize information</strong> from multiple sources to create cohesive arguments</li>
+                    <li><strong>Locate gaps</strong> in existing literature and identify research opportunities</li>
+                </ol>
+            </div>
+
+            <h2>What We'll Cover This Week</h2>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <h3>📚 Literature Review Fundamentals</h3>
+                    <p>Understanding purpose and structure</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>🔍 Source Analysis Methods</h3>
+                    <p>CRAAP Test and SIFT Method</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>✏️ Paraphrasing Techniques</h3>
+                    <p>Ethical integration of sources</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>🧩 Information Synthesis</h3>
+                    <p>Connecting ideas from multiple sources</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>🎯 Gap Identification</h3>
+                    <p>Finding research opportunities</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>📝 Assignment Guidance</h3>
+                    <p>Source summaries and synthesis</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: What is Literature Review -->
+        <div class="slide" id="slide3">
+            <h1>Understanding Literature Review</h1>
+            
+            <h2>Definition</h2>
+            <p>A literature review is a <span class="highlight">systematic examination of existing research</span> on a particular topic. It involves:</p>
+            <ul>
+                <li>Collecting and analyzing relevant sources</li>
+                <li>Identifying patterns, themes, and relationships</li>
+                <li>Evaluating the quality and credibility of research</li>
+                <li>Synthesizing information to build knowledge</li>
+                <li>Identifying gaps for future research</li>
+            </ul>
+
+            <h2>Two Key Processes in Literature Review</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+                <div class="tip-box">
+                    <h3>🔍 Critical Appraisal</h3>
+                    <p><strong>Purpose:</strong> Evaluate quality, relevance, and validity of individual studies</p>
+                    <p><strong>Focus:</strong> Methodology, design, data analysis, results, and conclusions</p>
+                    <p><strong>Goal:</strong> Identify high-quality evidence for informed decision-making</p>
+                </div>
+                <div class="success-box">
+                    <h3>🧩 Evidence Synthesis</h3>
+                    <p><strong>Purpose:</strong> Combine findings from multiple sources to generate new knowledge</p>
+                    <p><strong>Focus:</strong> Patterns, trends, inconsistencies, and gaps</p>
+                    <p><strong>Goal:</strong> Provide comprehensive summary and identify future research priorities</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>Example: Literature Review Process</h3>
+                <p><strong>Topic:</strong> "Effects of Social Media on Student Academic Performance"</p>
+                <ol>
+                    <li><strong>Collect Sources:</strong> Find 20 peer-reviewed articles on the topic</li>
+                    <li><strong>Analyze Each:</strong> Evaluate methodology, sample size, findings</li>
+                    <li><strong>Identify Patterns:</strong> Most studies show negative correlation between excessive social media use and grades</li>
+                    <li><strong>Find Gaps:</strong> Limited studies on positive educational uses of social media</li>
+                    <li><strong>Synthesize:</strong> Create comprehensive overview connecting all findings</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Slide 4: Analyzing Academic Sources -->
+        <div class="slide" id="slide4">
+            <h1>Analyzing Academic Sources</h1>
+            
+            <h2>Why Source Analysis Matters</h2>
+            <p>Not all sources are created equal. Effective source analysis helps you:</p>
+            <ul>
+                <li>Distinguish reliable from unreliable information</li>
+                <li>Build credible arguments</li>
+                <li>Avoid spreading misinformation</li>
+                <li>Demonstrate academic integrity</li>
+            </ul>
+
+            <h2>Key Factors to Evaluate</h2>
+            <table class="comparison-table">
+                <tr>
+                    <th>Factor</th>
+                    <th>What to Look For</th>
+                    <th>Questions to Ask</th>
+                </tr>
+                <tr>
+                    <td><strong>Authority</strong></td>
+                    <td>Author credentials, institutional affiliation</td>
+                    <td>Who wrote this? What are their qualifications?</td>
+                </tr>
+                <tr>
+                    <td><strong>Accuracy</strong></td>
+                    <td>Factual correctness, supporting evidence</td>
+                    <td>Is the information correct? Is it supported by evidence?</td>
+                </tr>
+                <tr>
+                    <td><strong>Currency</strong></td>
+                    <td>Publication date, recent updates</td>
+                    <td>When was this published? Is it still relevant?</td>
+                </tr>
+                <tr>
+                    <td><strong>Relevance</strong></td>
+                    <td>Connection to your research question</td>
+                    <td>Does this address my research needs?</td>
+                </tr>
+                <tr>
+                    <td><strong>Purpose</strong></td>
+                    <td>Intended audience, potential bias</td>
+                    <td>Why was this created? Who is the target audience?</td>
+                </tr>
+            </table>
+
+            <div class="warning-box">
+                <h3>⚠️ Red Flags to Watch For</h3>
+                <ul>
+                    <li>No author or credentials listed</li>
+                    <li>Extremely biased language</li>
+                    <li>No citations or references</li>
+                    <li>Published by unknown or questionable sources</li>
+                    <li>Information contradicts multiple reliable sources</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 5: CRAAP Test -->
+        <div class="slide" id="slide5">
+            <h1>The CRAAP Test for Source Evaluation</h1>
+            
+            <p>The <strong>CRAAP Test</strong> is a systematic method for evaluating sources. Each letter represents a criterion:</p>
+
+            <div class="craap-grid">
+                <div class="craap-item">
+                    <h3>🕐 Currency</h3>
+                    <p><strong>When was it published?</strong></p>
+                    <ul style="text-align: left;">
+                        <li>Publication date</li>
+                        <li>Last updated</li>
+                        <li>Relevance to topic</li>
+                        <li>Links still working</li>
+                    </ul>
+                </div>
+                <div class="craap-item">
+                    <h3>📊 Relevance</h3>
+                    <p><strong>Does it meet your needs?</strong></p>
+                    <ul style="text-align: left;">
+                        <li>Relates to research question</li>
+                        <li>Appropriate audience level</li>
+                        <li>Comprehensive coverage</li>
+                        <li>Better sources available?</li>
+                    </ul>
+                </div>
+                <div class="craap-item">
+                    <h3>👤 Authority</h3>
+                    <p><strong>Who wrote it?</strong></p>
+                    <ul style="text-align: left;">
+                        <li>Author credentials</li>
+                        <li>Institutional affiliation</li>
+                        <li>Contact information</li>
+                        <li>Publisher reputation</li>
+                    </ul>
+                </div>
+                <div class="craap-item">
+                    <h3>✓ Accuracy</h3>
+                    <p><strong>Is it reliable?</strong></p>
+                    <ul style="text-align: left;">
+                        <li>Supporting evidence</li>
+                        <li>Citations provided</li>
+                        <li>Fact-checked</li>
+                        <li>Grammar and spelling</li>
+                    </ul>
+                </div>
+                <div class="craap-item">
+                    <h3>🎯 Purpose</h3>
+                    <p><strong>Why was it created?</strong></p>
+                    <ul style="text-align: left;">
+                        <li>Inform, persuade, sell?</li>
+                        <li>Target audience</li>
+                        <li>Potential bias</li>
+                        <li>Hidden agendas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>CRAAP Test Example</h3>
+                <p><strong>Source:</strong> "Climate Change Effects on Agriculture" by Dr. Sarah Johnson, Published in Environmental Science Journal, 2023</p>
+                <ul>
+                    <li><strong>Currency:</strong> ✅ Published 2023, very recent</li>
+                    <li><strong>Relevance:</strong> ✅ Directly addresses my research on climate impacts</li>
+                    <li><strong>Authority:</strong> ✅ PhD in Environmental Science, university professor</li>
+                    <li><strong>Accuracy:</strong> ✅ 50+ citations, peer-reviewed journal</li>
+                    <li><strong>Purpose:</strong> ✅ Academic research, objective tone</li>
+                </ul>
+                <p><strong>Result:</strong> This source passes the CRAAP test and is suitable for academic use.</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: SIFT Method -->
+        <div class="slide" id="slide6">
+            <h1>The SIFT Method for Digital Information</h1>
+            
+            <p>The <strong>SIFT Method</strong> is particularly useful for evaluating online sources and digital content:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div class="tip-box">
+                    <h3>🛑 STOP</h3>
+                    <p>Pause before reading or sharing</p>
+                    <ul>
+                        <li>Don't immediately react</li>
+                        <li>Consider your purpose</li>
+                        <li>Ask: Do I know this source?</li>
+                        <li>Check your emotional response</li>
+                    </ul>
+                </div>
+                
+                <div class="success-box">
+                    <h3>🔍 INVESTIGATE the Source</h3>
+                    <p>Learn about who created it</p>
+                    <ul>
+                        <li>Author credentials</li>
+                        <li>Publication history</li>
+                        <li>Expertise in the field</li>
+                        <li>Institutional affiliation</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h3>🔍 FIND Trusted Coverage</h3>
+                    <p>Look for other reliable sources</p>
+                    <ul>
+                        <li>Search for the claim</li>
+                        <li>Check multiple sources</li>
+                        <li>Look for expert consensus</li>
+                        <li>Find original reporting</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-box">
+                    <h3>📍 TRACE Claims Back</h3>
+                    <p>Find the original context</p>
+                    <ul>
+                        <li>Follow citations</li>
+                        <li>Find original research</li>
+                        <li>Check for context stripping</li>
+                        <li>Verify quotes and data</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>SIFT Method in Action</h3>
+                <p><strong>Scenario:</strong> You find an article claiming "New study shows coffee cures cancer"</p>
+                <ol>
+                    <li><strong>STOP:</strong> This sounds too good to be true. Let me investigate.</li>
+                    <li><strong>INVESTIGATE:</strong> Who wrote this? Is it a health website, news outlet, or blog?</li>
+                    <li><strong>FIND Coverage:</strong> What do medical journals and health organizations say about coffee and cancer?</li>
+                    <li><strong>TRACE:</strong> What was the actual study? What did it really conclude?</li>
+                </ol>
+                <p><strong>Result:</strong> Often, you'll find the original study was much more limited in scope than the sensational headline suggests.</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Paraphrasing Techniques -->
+        <div class="slide" id="slide7">
+            <h1>Mastering Paraphrasing Techniques</h1>
+            
+            <h2>What is Paraphrasing?</h2>
+            <p>Paraphrasing is <span class="highlight">restating someone else's ideas in your own words</span> while maintaining the original meaning. It's essential for:</p>
+            <ul>
+                <li>Avoiding plagiarism</li>
+                <li>Demonstrating understanding</li>
+                <li>Integrating sources smoothly</li>
+                <li>Maintaining your writing voice</li>
+            </ul>
+
+            <h2>Effective Paraphrasing Strategies</h2>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <h3>1. Change Sentence Structure</h3>
+                    <p>Rearrange the order of ideas and use different grammatical patterns</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>2. Use Synonyms</h3>
+                    <p>Replace words with similar meanings (but keep technical terms)</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>3. Change Voice</h3>
+                    <p>Convert active to passive voice or vice versa</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>4. Combine or Split Ideas</h3>
+                    <p>Merge sentences or break complex ideas into simpler ones</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>Paraphrasing Example</h3>
+                <p><strong>Original:</strong> "Social media platforms have fundamentally transformed the way young people communicate, creating new opportunities for connection while simultaneously raising concerns about privacy and mental health."</p>
+                
+                <p><strong>Poor Paraphrase (Too Similar):</strong> "Social media platforms have basically changed how young people communicate, making new opportunities for connection but also raising concerns about privacy and mental health."</p>
+                
+                <p><strong>Good Paraphrase:</strong> "The rise of social networking sites has revolutionized youth communication patterns, offering enhanced connectivity benefits alongside emerging challenges related to personal data protection and psychological well-being (Author, Year)."</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠️ Common Paraphrasing Mistakes</h3>
+                <ul>
+                    <li><strong>Synonym Substitution Only:</strong> Just replacing words without changing structure</li>
+                    <li><strong>Too Close to Original:</strong> Minor changes that don't constitute true paraphrasing</li>
+                    <li><strong>Missing Citations:</strong> Forgetting to cite the original source</li>
+                    <li><strong>Changing Meaning:</strong> Altering the author's intended message</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h3>💡 Paraphrasing Process</h3>
+                <ol>
+                    <li><strong>Read and Understand:</strong> Fully comprehend the original text</li>
+                    <li><strong>Put Away the Source:</strong> Don't look at it while writing</li>
+                    <li><strong>Write in Your Voice:</strong> Express the idea as you would explain it</li>
+                    <li><strong>Check and Cite:</strong> Compare with original and add citation</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Slide 8: Synthesizing Information -->
+        <div class="slide" id="slide8">
+            <h1>Synthesizing Information from Multiple Sources</h1>
+            
+            <h2>What is Synthesis?</h2>
+            <p>Synthesis involves <span class="highlight">combining information from multiple sources to create new understanding</span>. It goes beyond summarizing to:</p>
+            <ul>
+                <li>Connect ideas across sources</li>
+                <li>Identify patterns and themes</li>
+                <li>Compare and contrast viewpoints</li>
+                <li>Create new insights</li>
+            </ul>
+
+            <h2>Types of Synthesis</h2>
+            <table class="comparison-table">
+                <tr>
+                    <th>Type</th>
+                    <th>Purpose</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td><strong>Explanatory</strong></td>
+                    <td>Help readers understand a topic</td>
+                    <td>Combining studies to explain what causes climate change</td>
+                </tr>
+                <tr>
+                    <td><strong>Argumentative</strong></td>
+                    <td>Support a thesis or position</td>
+                    <td>Using multiple sources to argue for renewable energy</td>
+                </tr>
+                <tr>
+                    <td><strong>Review</strong></td>
+                    <td>Summarize current knowledge</td>
+                    <td>Literature review on social media effects</td>
+                </tr>
+            </table>
+
+            <h2>Synthesis Strategies</h2>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <h3>🔗 Find Connections</h3>
+                    <p>Look for relationships between sources - agreements, disagreements, or complementary information</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>🎨 Organize by Themes</h3>
+                    <p>Group sources by topic or concept rather than discussing each source separately</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>⚖️ Compare Perspectives</h3>
+                    <p>Analyze different viewpoints and explain why they might differ</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>🧩 Create New Meaning</h3>
+                    <p>Draw conclusions that emerge from combining multiple sources</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>Synthesis Example: Remote Work Productivity</h3>
+                <p><strong>Source A:</strong> Study shows 40% increase in productivity with remote work</p>
+                <p><strong>Source B:</strong> Research indicates challenges with team collaboration</p>
+                <p><strong>Source C:</strong> Survey reveals improved work-life balance satisfaction</p>
+                
+                <p><strong>Poor Synthesis:</strong> "Source A says productivity increases. Source B discusses collaboration problems. Source C mentions work-life balance."</p>
+                
+                <p><strong>Good Synthesis:</strong> "While remote work demonstrates clear productivity gains (Source A), these benefits must be weighed against collaboration challenges (Source B). However, the improved work-life satisfaction reported by workers (Source C) suggests that hybrid models might optimize both productivity and team dynamics."</p>
+            </div>
+
+            <div class="tip-box">
+                <h3>💡 Synthesis Matrix Tool</h3>
+                <p>Create a table with sources as columns and themes as rows. Fill in each cell with relevant information, making patterns easier to identify.</p>
+                <div class="code-block">
+Theme 1: Productivity | Source A: +40% | Source B: Variable | Source C: High satisfaction
+Theme 2: Collaboration | Source A: Not studied | Source B: Challenges | Source C: Mixed results
+Theme 3: Work-life balance | Source A: Not studied | Source B: Improved | Source C: Significantly better
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Identifying Research Gaps -->
+        <div class="slide" id="slide9">
+            <h1>Identifying Research Gaps</h1>
+            
+            <h2>What is a Research Gap?</h2>
+            <p>A research gap is <span class="highlight">an area where information is missing or insufficient</span> in the current literature. Identifying gaps is crucial for:</p>
+            <ul>
+                <li>Advancing knowledge in your field</li>
+                <li>Justifying new research</li>
+                <li>Contributing original insights</li>
+                <li>Guiding future studies</li>
+            </ul>
+
+            <h2>Types of Research Gaps</h2>
+            <div class="craap-grid">
+                <div class="craap-item">
+                    <h3>📊 Empirical Gaps</h3>
+                    <p>Lack of sufficient data or studies</p>
+                    <ul style="text-align: left;">
+                        <li>Understudied populations</li>
+                        <li>Limited sample sizes</li>
+                        <li>Need for replication</li>
+                    </ul>
+                </div>
+                <div class="craap-item">
+                    <h3>🧠 Theoretical Gaps</h3>
+                    <p>Missing conceptual frameworks</p>
+                    <ul style="text-align: left;">
+                        <li>Unexplained phenomena</li>
+                        <li>Conflicting theories</li>
+                        <li>New frameworks needed</li>
+                    </ul>
+                </div>
+                <div class="craap-item">
+                    <h3>🔬 Methodological Gaps</h3>
+                    <p>Limitations in research approaches</p>
+                    <ul style="text-align: left;">
+                        <li>Inadequate methods</li>
+                        <li>Need for new tools</li>
+                        <li>Method limitations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>How to Identify Gaps</h2>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <h3>1. Look for Explicit Statements</h3>
+                    <p>Authors often state: "Future research should..." or "This study was limited by..."</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>2. Notice Contradictions</h3>
+                    <p>When sources disagree, there's an opportunity to resolve the conflict</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>3. Check Citations</h3>
+                    <p>Recent papers with few citations might indicate emerging areas</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>4. Consider Context</h3>
+                    <p>Different populations, time periods, or settings not yet studied</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>5. Ask "What's Missing?"</h3>
+                    <p>What questions remain unanswered after reviewing the literature?</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>Gap Identification Example</h3>
+                <p><strong>Topic:</strong> Online Learning Effectiveness</p>
+                <p><strong>Literature Review Findings:</strong></p>
+                <ul>
+                    <li>Many studies on K-12 online learning</li>
+                    <li>Some research on university-level online courses</li>
+                    <li>Limited studies on adult learners (25+)</li>
+                    <li>Most research conducted before 2020</li>
+                </ul>
+                <p><strong>Identified Gaps:</strong></p>
+                <ul>
+                    <li><strong>Population Gap:</strong> Limited research on working adults in online programs</li>
+                    <li><strong>Temporal Gap:</strong> Need for post-pandemic effectiveness studies</li>
+                    <li><strong>Methodological Gap:</strong> Long-term retention studies are rare</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 10: Writing Gap Statements -->
+        <div class="slide" id="slide10">
+            <h1>Writing Effective Gap Statements</h1>
+            
+            <h2>What is a Gap Statement?</h2>
+            <p>A gap statement is a <span class="highlight">clear, concise explanation of what's missing</span> in the current literature and how your work will address it.</p>
+
+            <h2>Components of a Strong Gap Statement</h2>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <h3>1. Context</h3>
+                    <p>Establish what is known about the topic</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>2. Gap</h3>
+                    <p>Clearly state what is missing or unknown</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>3. Significance</h3>
+                    <p>Explain why this gap matters</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>4. Your Contribution</h3>
+                    <p>Describe how you'll address the gap</p>
+                </div>
+            </div>
+
+            <h2>Gap Statement Signal Phrases</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="tip-box">
+                    <h3>🔍 Identifying Gaps</h3>
+                    <ul>
+                        <li>"...has not been studied..."</li>
+                        <li>"...is required/needed..."</li>
+                        <li>"...the key question is/remains..."</li>
+                        <li>"...it is important to address..."</li>
+                        <li>"...little is known about..."</li>
+                    </ul>
+                </div>
+                <div class="success-box">
+                    <h3>✅ Filling Gaps</h3>
+                    <ul>
+                        <li>"Therefore, this study aims to..."</li>
+                        <li>"In this paper, we investigate..."</li>
+                        <li>"The purpose of this study was to..."</li>
+                        <li>"This research addresses..."</li>
+                        <li>"We therefore analyzed..."</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>Gap Statement Examples</h3>
+                
+                <h4>Example 1: Climate Change Research</h4>
+                <p><strong>Context:</strong> "Research has extensively documented climate change effects on polar regions and temperate zones."</p>
+                <p><strong>Gap:</strong> "However, <span class="highlight">limited studies have examined impacts on tropical urban environments</span>, particularly in developing nations."</p>
+                <p><strong>Significance:</strong> "This knowledge gap is critical given that tropical cities house 40% of the world's population."</p>
+                <p><strong>Contribution:</strong> "Therefore, this study investigates climate adaptation strategies in three major tropical cities."</p>
+                
+                <h4>Example 2: Educational Technology</h4>
+                <p>"While numerous studies demonstrate the effectiveness of educational apps for elementary students, <span class="highlight">research on their impact on high school students with learning disabilities remains limited</span>. This gap is significant because this population faces unique challenges that may require specialized technological interventions. Therefore, this study examines how customized educational apps affect learning outcomes for high school students with dyslexia."</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠️ Avoid These Gap Statement Mistakes</h3>
+                <ul>
+                    <li><strong>Too Broad:</strong> "Not much research exists on education"</li>
+                    <li><strong>Too Narrow:</strong> Gap that only you would care about</li>
+                    <li><strong>Not Justified:</strong> Failing to explain why the gap matters</li>
+                    <li><strong>Impossible to Address:</strong> Gap too large for your scope/resources</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 11: Assignment Explanation -->
+        <div class="slide" id="slide11">
+            <h1>Week 3 Assignment: Source Analysis and Synthesis</h1>
+            
+            <h2>Assignment Overview</h2>
+            <p>Using the <strong>five credible sources</strong> from your previous unit, you will create a comprehensive analysis that demonstrates your mastery of literature review skills.</p>
+
+            <h2>Assignment Components</h2>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <h3>📝 Part 1: Source Summaries</h3>
+                    <p><strong>What to do:</strong> Create individual summaries for each of your 5 sources</p>
+                    <p><strong>Requirements:</strong></p>
+                    <ul>
+                        <li>Include both direct quotes and paraphrases</li>
+                        <li>Demonstrate critical analysis, not just description</li>
+                        <li>Show how each source relates to your topic</li>
+                        <li>Proper APA citations for all information</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h3>🧩 Part 2: Synthesis Paragraphs</h3>
+                    <p><strong>What to do:</strong> Write 1-2 paragraphs connecting information across sources</p>
+                    <p><strong>Requirements:</strong></p>
+                    <ul>
+                        <li>Identify patterns, themes, or relationships</li>
+                        <li>Compare and contrast different perspectives</li>
+                        <li>Create new insights from the combination</li>
+                        <li>Use transition words to show connections</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h3>🎯 Part 3: Gap Identification</h3>
+                    <p><strong>What to do:</strong> Identify gaps in the literature and explain your planned contribution</p>
+                    <p><strong>Requirements:</strong></p>
+                    <ul>
+                        <li>Clearly state what's missing in current research</li>
+                        <li>Explain why this gap is significant</li>
+                        <li>Describe how you plan to address it</li>
+                        <li>If no gaps exist, explain your planned innovation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Technical Requirements</h2>
+            <div class="warning-box">
+                <ul>
+                    <li><strong>Length:</strong> 500-750 words (excluding references and title)</li>
+                    <li><strong>Format:</strong> Double-spaced, Times New Roman, 12pt font</li>
+                    <li><strong>Style:</strong> APA format for citations and references</li>
+                    <li><strong>Sources:</strong> Use your 5 credible sources from the previous unit</li>
+                    <li><strong>Quality:</strong> High-quality, credible, relevant sources</li>
+                </ul>
+            </div>
+
+            <h2>Assessment Criteria</h2>
+            <table class="comparison-table">
+                <tr>
+                    <th>Criteria</th>
+                    <th>Excellent</th>
+                    <th>Good</th>
+                    <th>Needs Improvement</th>
+                </tr>
+                <tr>
+                    <td><strong>Source Analysis</strong></td>
+                    <td>Demonstrates deep critical thinking and evaluation</td>
+                    <td>Shows good understanding and analysis</td>
+                    <td>Mostly descriptive, limited analysis</td>
+                </tr>
+                <tr>
+                    <td><strong>Paraphrasing</strong></td>
+                    <td>Skillful paraphrasing maintains meaning, avoids plagiarism</td>
+                    <td>Good paraphrasing with minor issues</td>
+                    <td>Poor paraphrasing or too close to original</td>
+                </tr>
+                <tr>
+                    <td><strong>Synthesis</strong></td>
+                    <td>Creates new insights by connecting multiple sources</td>
+                    <td>Makes good connections between sources</td>
+                    <td>Limited synthesis, mostly separate discussions</td>
+                </tr>
+                <tr>
+                    <td><strong>Gap Identification</strong></td>
+                    <td>Clearly identifies significant, addressable gaps</td>
+                    <td>Identifies relevant gaps with good justification</td>
+                    <td>Vague or poorly justified gap identification</td>
+                </tr>
+            </table>
+
+            <div class="tip-box">
+                <h3>💡 Success Tips</h3>
+                <ul>
+                    <li><strong>Start Early:</strong> Give yourself time to analyze and synthesize thoroughly</li>
+                    <li><strong>Use a Matrix:</strong> Create a table to track themes across sources</li>
+                    <li><strong>Think Critically:</strong> Don't just describe what sources say, analyze their contributions</li>
+                    <li><strong>Connect Ideas:</strong> Look for relationships between sources, not just individual summaries</li>
+                    <li><strong>Be Specific:</strong> Identify concrete, addressable gaps rather than vague statements</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 12: Summary and Next Steps -->
+        <div class="slide" id="slide12">
+            <h1>Unit 3 Summary and Moving Forward</h1>
+            
+            <h2>Key Takeaways</h2>
+            <div class="success-box">
+                <h3>🎯 What We've Learned</h3>
+                <ul>
+                    <li><strong>Source Evaluation:</strong> Use CRAAP test and SIFT method to assess credibility</li>
+                    <li><strong>Critical Analysis:</strong> Look beyond surface content to evaluate methodology and bias</li>
+                    <li><strong>Effective Paraphrasing:</strong> Change structure and vocabulary while maintaining meaning</li>
+                    <li><strong>Information Synthesis:</strong> Connect ideas across sources to create new understanding</li>
+                    <li><strong>Gap Identification:</strong> Spot opportunities for original contribution to knowledge</li>
+                    <li><strong>Academic Writing:</strong> Integrate sources ethically and effectively</li>
+                </ul>
+            </div>
+
+            <h2>This Week's Action Items</h2>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <h3>✅ Complete Required Readings</h3>
+                    <p>Review all assigned materials in the Learning Guide</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>✅ Work on Assignment</h3>
+                    <p>Apply CRAAP/SIFT tests to your sources, practice paraphrasing, identify synthesis opportunities</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>✅ Take Self-Quiz</h3>
+                    <p>Test your understanding of concepts (doesn't count toward grade)</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>✅ Complete Graded Quiz</h3>
+                    <p>Demonstrate mastery of unit learning objectives</p>
+                </div>
+            </div>
+
+            <h2>Looking Ahead</h2>
+            <p>The skills you've developed this week form the foundation for advanced academic writing. In upcoming units, you'll build on these abilities to:</p>
+            <ul>
+                <li>Construct compelling arguments using synthesized evidence</li>
+                <li>Develop original research proposals</li>
+                <li>Write comprehensive literature reviews</li>
+                <li>Contribute meaningfully to academic discourse</li>
+            </ul>
+
+            <div class="tip-box">
+                <h3>💡 Study Tips for Success</h3>
+                <ul>
+                    <li><strong>Practice Regularly:</strong> Apply these techniques to all your reading</li>
+                    <li><strong>Seek Feedback:</strong> Use office hours to discuss your analysis approaches</li>
+                    <li><strong>Use Library Resources:</strong> Contact library@uopeople.edu for research help</li>
+                    <li><strong>Join Study Groups:</strong> Discuss source evaluation with classmates</li>
+                    <li><strong>Keep Learning:</strong> These skills improve with consistent practice</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h3>📞 Need Help?</h3>
+                <p><strong>Instructor:</strong> Yogeeta Sharma - Office hours and discussion forums</p>
+                <p><strong>Library Support:</strong> library@uopeople.edu for research assistance</p>
+                <p><strong>Learning Resource Center:</strong> Additional tutoring and support</p>
+                <p><strong>Technical Issues:</strong> University IT support for platform problems</p>
+            </div>
+
+            <div class="success-box" style="text-align: center; margin-top: 30px;">
+                <h3>🎓 Remember</h3>
+                <p><strong>Academic success comes from consistent practice and critical thinking. You have the tools - now apply them with confidence!</strong></p>
+            </div>
+        </div>
+		
+		<!-- Slide 15: Questions -->
+        <div class="slide" id="slide13">
+            <h1>❓ Practice Questions</h1>
+            <h2>Test Your Understanding</h2>
+            
+            <div class="quiz-question">
+                <h4>Question 1:</h4>
+                <p>What does the "R" in CRAAP stand for, and why is it important for academic research?</p>
+            </div>
+            
+            <div class="quiz-question">
+                <h4>Question 2:</h4>
+                <p>Identify what's wrong with this paraphrase:</p>
+                <p><strong>Original:</strong> "Digital technology has revolutionized education by providing unprecedented access to information and learning resources." (Brown, 2023)</p>
+                <p><strong>Paraphrase:</strong> "Digital technology has transformed education by offering unprecedented access to information and learning materials."</p>
+            </div>
+            
+            <div class="quiz-question">
+                <h4>Question 3:</h4>
+                <p>Which of the following is an example of an empirical research gap?</p>
+                <p>a) No unified theory explains online learning motivation<br>
+                b) Limited studies exist on social media's impact on elderly populations<br>
+                c) Most research uses surveys rather than experimental methods<br>
+                d) Contradictory findings about screen time effects</p>
+            </div>
+            
+            <div class="quiz-question">
+                <h4>Question 4:</h4>
+                <p>In the SIFT method, what should you do FIRST when encountering a new source?</p>
+            </div>
+            
+            <div class="quiz-question">
+                <h4>Question 5:</h4>
+                <p>Write a one-sentence synthesis combining these two findings:<br>
+                • Source A: Students prefer online learning for flexibility<br>
+                • Source B: Teachers report lower engagement in online classes</p>
+            </div>
+        </div>
+
+        <!-- Slide 16: Answers -->
+        <div class="slide" id="slide14">
+            <h1>✅ Answer Key</h1>
+            <h2>Check Your Understanding</h2>
+            
+            <div class="quiz-answer">
+                <h4>Answer 1:</h4>
+                <p><strong>Relevance.</strong> It's important because sources must directly relate to your research question and be appropriate for your academic level and audience. Irrelevant sources waste time and weaken your argument.</p>
+            </div>
+            
+            <div class="quiz-answer">
+                <h4>Answer 2:</h4>
+                <p>This paraphrase is <strong>too similar to the original</strong>. It only changes a few words ("revolutionized" to "transformed," "resources" to "materials") but keeps the same sentence structure and most vocabulary. It also <strong>lacks a citation</strong>.</p>
+            </div>
+            
+            <div class="quiz-answer">
+                <h4>Answer 3:</h4>
+                <p><strong>b) Limited studies exist on social media's impact on elderly populations</strong><br>
+                This represents an empirical gap because it identifies a lack of research data/studies in a specific area.</p>
+            </div>
+            
+            <div class="quiz-answer">
+                <h4>Answer 4:</h4>
+                <p><strong>STOP.</strong> You should pause and ask whether you know the website or source and consider its reputation before reading or sharing the content.</p>
+            </div>
+            
+            <div class="quiz-answer">
+                <h4>Answer 5 (Sample):</h4>
+                <p>While students value online learning for its flexibility (Source A), this preference may come at the cost of classroom engagement that teachers consider essential for effective learning (Source B).</p>
+            </div>
+            
+            <div class="instructor-note">
+                <strong>Next Steps:</strong> Review any concepts where students struggled and provide additional examples as needed.
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('.navigation a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add fade-in animation for slides
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.slide').forEach(slide => {
+            slide.style.opacity = '0';
+            slide.style.transform = 'translateY(20px)';
+            slide.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(slide);
+        });
+    </script>
+</body>
+</html>
