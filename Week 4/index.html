@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGL 1102 Week 4: Research Objectives, Questions & Problem Statements</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            display: none;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-left: 5px solid #e74c3c;
+            padding-left: 20px;
+        }
+
+        h3 {
+            color: #2980b9;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        p, li {
+            color: #34495e;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        ul {
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: #2c3e50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .assignment-box {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: #2c3e50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: rgba(255,255,255,0.9);
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(255,255,255,0.9);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            color: #2c3e50;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .smart-goals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .smart-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .question-answer {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .answer {
+            color: #495057;
+        }
+
+        .taxonomy-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .taxonomy-item {
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .remember { background: #e74c3c; }
+        .understand { background: #f39c12; }
+        .apply { background: #f1c40f; color: #2c3e50; }
+        .analyze { background: #2ecc71; }
+        .evaluate { background: #3498db; }
+        .create { background: #9b59b6; }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">0</span>
+        </div>
+
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>ENGL 1102 English Composition</h1>
+            <h2 style="text-align: center; border: none; padding: 0;">Week 4: Crafting Objectives, Questions & Problem Statements</h2>
+            <div class="highlight-box" style="text-align: center; margin-top: 40px;">
+                <h3>Instructor: Yogeeta Sharma</h3>
+                <p style="margin: 0;">University of the People</p>
+            </div>
+            <div class="info-box" style="margin-top: 30px;">
+                <h3>Learning Objectives:</h3>
+                <ul style="margin: 0;">
+                    <li>Organize and present a coherent narrative that integrates multiple perspectives</li>
+                    <li>Refine research objectives and questions based on literature analysis</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 2: Week 3 Recap -->
+        <div class="slide">
+            <h1>Week 3 Recap</h1>
+            <h2>What We Learned Last Week</h2>
+            <div class="info-box">
+                <h3>Literature Review Fundamentals</h3>
+                <ul>
+                    <li><strong>Purpose:</strong> Systematically review existing research on your topic</li>
+                    <li><strong>Critical Analysis:</strong> Evaluate sources for credibility and relevance</li>
+                    <li><strong>Synthesis:</strong> Combine information from multiple sources</li>
+                    <li><strong>Gap Identification:</strong> Find what hasn't been studied yet</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <h3>Key Skills Developed:</h3>
+                <ul>
+                    <li>Academic source evaluation</li>
+                    <li>Citation and referencing</li>
+                    <li>Thematic organization of literature</li>
+                    <li>Identifying research gaps</li>
+                </ul>
+            </div>
+            <p><strong>This Week:</strong> We'll use those identified gaps to create focused problem statements and research objectives!</p>
+        </div>
+
+        <!-- Slide 3: What is a Problem Statement? -->
+        <div class="slide">
+            <h1>Understanding Problem Statements</h1>
+            <h2>What is a Problem Statement?</h2>
+            <div class="highlight-box">
+                <p>A problem statement is a <strong>clear, concise description</strong> of an issue or gap in knowledge that your research aims to address.</p>
+            </div>
+            
+            <h3>Key Components:</h3>
+            <ul>
+                <li><strong>Specific:</strong> Clearly defined scope and focus</li>
+                <li><strong>Evidence-based:</strong> Supported by credible research</li>
+                <li><strong>Real-life issue:</strong> Addresses actual problems, not just academic gaps</li>
+                <li><strong>Significant:</strong> Has meaningful consequences if not addressed</li>
+            </ul>
+
+            <div class="example-box">
+                <h3>Example Problem Statement:</h3>
+                <p><em>"Only 6% of CEOs in Fortune 500 companies are women (Center for Leadership Studies, 2019)."</em></p>
+                <p>This statement is specific, evidence-based, addresses a real-world issue, and has significant implications for gender equality in leadership.</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Components of a Strong Problem Statement -->
+        <div class="slide">
+            <h1>Crafting Your Problem Statement</h1>
+            <h2>Essential Elements</h2>
+            
+            <div class="info-box">
+                <h3>Three-Part Structure:</h3>
+                <ol>
+                    <li><strong>Context & Problem:</strong> What is the issue?</li>
+                    <li><strong>Consequences:</strong> What happens if we don't solve it?</li>
+                    <li><strong>Gap:</strong> What knowledge is missing?</li>
+                </ol>
+            </div>
+
+            <h3>Writing Tips:</h3>
+            <ul>
+                <li>Start with: "The problem to be addressed through this study is..."</li>
+                <li>Use recent citations (within last 5 years)</li>
+                <li>Be specific about who is affected</li>
+                <li>Keep it focused and manageable</li>
+                <li>250-300 words maximum</li>
+            </ul>
+
+            <div class="example-box">
+                <h3>Poor Example:</h3>
+                <p>"People don't like their jobs" - Too vague, no evidence</p>
+                <h3>Better Example:</h3>
+                <p>"Employee well-being among mid-level managers in financial services has declined, with 50% reporting dissatisfaction with key workplace aspects (Starkman, 2015), leading to 18.6% annual turnover rates..."</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: Research Objectives -->
+        <div class="slide">
+            <h1>Research Objectives</h1>
+            <h2>Defining Your Research Goals</h2>
+            
+            <div class="highlight-box">
+                <p>Research objectives describe <strong>what your research is trying to achieve</strong> and explain why you are pursuing it.</p>
+            </div>
+
+            <h3>Key Functions:</h3>
+            <ul>
+                <li><strong>Establish scope and depth</strong> of your project</li>
+                <li><strong>Contribute to research design</strong> - guide methodology choices</li>
+                <li><strong>Indicate contribution</strong> to existing knowledge</li>
+            </ul>
+
+            <div class="info-box">
+                <h3>Placement in Your Paper:</h3>
+                <p>Objectives should appear in the <strong>introduction</strong> of your research paper, at the end of your <strong>problem statement</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h3>Example Research Aim vs. Objectives:</h3>
+                <p><strong>Aim:</strong> To examine contributory factors to muscle retention in elderly people.</p>
+                <p><strong>Objectives:</strong></p>
+                <ul style="margin: 0;">
+                    <li>To assess the relationship between sedentary habits and muscle atrophy</li>
+                    <li>To determine the impact of dietary factors on muscular health</li>
+                    <li>To determine the effect of physical activity on participants' muscular health</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 6: SMART Research Objectives -->
+        <div class="slide">
+            <h1>SMART Research Objectives</h1>
+            <h2>Making Your Objectives Effective</h2>
+            
+            <div class="smart-goals">
+                <div class="smart-item">
+                    <h3>S</h3>
+                    <p>Specific</p>
+                </div>
+                <div class="smart-item">
+                    <h3>M</h3>
+                    <p>Measurable</p>
+                </div>
+                <div class="smart-item">
+                    <h3>A</h3>
+                    <p>Achievable</p>
+                </div>
+                <div class="smart-item">
+                    <h3>R</h3>
+                    <p>Realistic</p>
+                </div>
+                <div class="smart-item">
+                    <h3>T</h3>
+                    <p>Timely</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>SMART Criteria Explained:</h3>
+                <ul>
+                    <li><strong>Specific:</strong> Well-defined, clear, and unambiguous</li>
+                    <li><strong>Measurable:</strong> With criteria that measure progress toward goal accomplishment</li>
+                    <li><strong>Achievable:</strong> Attainable and not impossible to achieve</li>
+                    <li><strong>Realistic:</strong> Within reach and relevant to your life purpose</li>
+                    <li><strong>Timely:</strong> With a clearly defined timeline including a starting date and target date</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Example:</strong> "By August 1, I will obtain a gym membership at my local community center and work out four days a week. Every week, I will aim to lose one pound of body fat."</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Bloom's Taxonomy for Objectives -->
+        <div class="slide">
+            <h1>Using Bloom's Taxonomy</h1>
+            <h2>Choosing the Right Action Verbs</h2>
+            
+            <div class="taxonomy-levels">
+                <div class="taxonomy-item remember">
+                    <h3>Remember</h3>
+                    <p>cite, define, describe, identify, list, recall</p>
+                </div>
+                <div class="taxonomy-item understand">
+                    <h3>Understand</h3>
+                    <p>classify, compare, explain, illustrate, interpret</p>
+                </div>
+                <div class="taxonomy-item apply">
+                    <h3>Apply</h3>
+                    <p>apply, calculate, demonstrate, execute, implement</p>
+                </div>
+                <div class="taxonomy-item analyze">
+                    <h3>Analyze</h3>
+                    <p>analyze, break down, categorize, compare, contrast</p>
+                </div>
+                <div class="taxonomy-item evaluate">
+                    <h3>Evaluate</h3>
+                    <p>appraise, argue, assess, conclude, critique</p>
+                </div>
+                <div class="taxonomy-item create">
+                    <h3>Create</h3>
+                    <p>arrange, assemble, build, create, design, develop</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>Example Objectives Using Bloom's Verbs:</h3>
+                <ul>
+                    <li>"To <strong>analyze</strong> the relationship between..."</li>
+                    <li>"To <strong>evaluate</strong> the effectiveness of..."</li>
+                    <li>"To <strong>compare</strong> the outcomes between..."</li>
+                    <li>"To <strong>assess</strong> the impact of..."</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 8: Research Questions -->
+        <div class="slide">
+            <h1>Developing Research Questions</h1>
+            <h2>From Objectives to Specific Questions</h2>
+            
+            <div class="highlight-box">
+                <p>Research questions are <strong>specific inquiries</strong> that help achieve your objectives. They should be clear, focused, and answerable through research.</p>
+            </div>
+
+            <h3>Techniques for Generating Questions:</h3>
+            <ul>
+                <li><strong>Literature Review:</strong> Look at "future research" suggestions in recent articles</li>
+                <li><strong>Behavioral Analysis:</strong> Ask about causes, effects, frequency, or intensity</li>
+                <li><strong>Relationship Questions:</strong> Explore connections between variables</li>
+                <li><strong>Comparative Questions:</strong> Compare different groups or situations</li>
+            </ul>
+
+            <div class="info-box">
+                <h3>Key Questions to Ask Yourself:</h3>
+                <ul>
+                    <li>What are some possible causes of the behavior?</li>
+                    <li>What are some possible effects of the behavior?</li>
+                    <li>What types of individuals might exhibit more or less of the behavior?</li>
+                    <li>Does the behavior occur more or less in certain situations?</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 9: Evaluating Research Questions -->
+        <div class="slide">
+            <h1>Evaluating Research Questions</h1>
+            <h2>Two Key Criteria</h2>
+            
+            <div class="info-box">
+                <h3>1. Interestingness</h3>
+                <ul>
+                    <li><strong>Answer is in doubt:</strong> There should be reasonable chance for different answers</li>
+                    <li><strong>Fills a gap:</strong> Addresses something not already answered</li>
+                    <li><strong>Practical implications:</strong> Has real-world relevance and application</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>2. Feasibility</h3>
+                <ul>
+                    <li><strong>Time constraints:</strong> Can be completed within available timeframe</li>
+                    <li><strong>Resource availability:</strong> You have access to necessary materials and participants</li>
+                    <li><strong>Technical knowledge:</strong> Within your skill level or learnable</li>
+                    <li><strong>Ethical considerations:</strong> Can be conducted ethically</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h3>Example Assessment:</h3>
+                <p><strong>Question:</strong> "Does note-taking by hand improve learning compared to digital note-taking?"</p>
+                <p><strong>Interesting?</strong> ✓ Practical implications for education policy</p>
+                <p><strong>Feasible?</strong> ✓ Can be tested with student participants</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Assignment Overview -->
+        <div class="slide">
+            <h1>Week 4 Assignment</h1>
+            <h2>Crafting Your Problem Statement & Objectives</h2>
+            
+            <div class="assignment-box">
+                <h3>Assignment Requirements:</h3>
+                <ul>
+                    <li><strong>Word Count:</strong> 500-750 words (excluding references and title)</li>
+                    <li><strong>Format:</strong> Double-spaced, Times New Roman, 12pt font</li>
+                    <li><strong>Sources:</strong> Use high-quality, credible, relevant sources</li>
+                    <li><strong>Citations:</strong> Proper in-text citations and reference list</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Structure:</h3>
+                <ol>
+                    <li><strong>Problem Statement:</strong> Describe the issue/gap and justify its importance</li>
+                    <li><strong>Research Objectives:</strong> Define overall goals that address the problem</li>
+                    <li><strong>Research Questions:</strong> Frame specific inquiries linked to objectives</li>
+                </ol>
+            </div>
+
+            <div class="example-box">
+                <h3>Success Tips:</h3>
+                <ul>
+                    <li>Build on your literature review from previous weeks</li>
+                    <li>Use SMART criteria for objectives</li>
+                    <li>Choose appropriate Bloom's taxonomy verbs</li>
+                    <li>Ensure questions are both interesting and feasible</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 11: Step-by-Step Writing Guide -->
+        <div class="slide">
+            <h1>Writing Guide</h1>
+            <h2>Step-by-Step Process</h2>
+            
+            <h3>Step 1: Problem Statement (150-200 words)</h3>
+            <div class="info-box">
+                <ol>
+                    <li>Start with: "The problem to be addressed through this study is..."</li>
+                    <li>Describe the specific issue with statistical evidence</li>
+                    <li>Explain consequences of NOT solving the problem</li>
+                    <li>Identify the knowledge gap your research will address</li>
+                </ol>
+            </div>
+
+            <h3>Step 2: Research Objectives (100-150 words)</h3>
+            <div class="highlight-box">
+                <ul>
+                    <li>Write 2-4 SMART objectives</li>
+                    <li>Use appropriate Bloom's taxonomy verbs</li>
+                    <li>Ensure they directly address your problem statement</li>
+                    <li>Make them specific and measurable</li>
+                </ul>
+            </div>
+
+            <h3>Step 3: Research Questions (200-250 words)</h3>
+            <div class="example-box">
+                <ul>
+                    <li>Develop 3-5 specific questions</li>
+                    <li>Link each question to a specific objective</li>
+                    <li>Ensure they are answerable through research</li>
+                    <li>Check for interestingness and feasibility</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 12: Common Mistakes to Avoid -->
+        <div class="slide">
+            <h1>Common Mistakes to Avoid</h1>
+            <h2>Learn from Others' Errors</h2>
+            
+            <div class="highlight-box">
+                <h3>Problem Statement Mistakes:</h3>
+                <ul>
+                    <li><strong>Too broad:</strong> "Social media is bad for society"</li>
+                    <li><strong>No evidence:</strong> Making claims without citations</li>
+                    <li><strong>Not real-world:</strong> Focusing only on academic gaps</li>
+                    <li><strong>Too long:</strong> Exceeding 300 words</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Objective Mistakes:</h3>
+                <ul>
+                    <li><strong>Vague verbs:</strong> "To study..." instead of "To analyze..."</li>
+                    <li><strong>Too ambitious:</strong> Objectives that are impossible to achieve</li>
+                    <li><strong>Not measurable:</strong> Can't determine if achieved</li>
+                    <li><strong>Misaligned:</strong> Don't address the problem statement</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h3>Research Question Mistakes:</h3>
+                <ul>
+                    <li><strong>Yes/No questions:</strong> Not complex enough for research</li>
+                    <li><strong>Too many variables:</strong> Trying to study everything at once</li>
+                    <li><strong>Unfeasible:</strong> Requiring resources you don't have</li>
+                    <li><strong>Already answered:</strong> Repeating existing research exactly</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 13: Questions -->
+        <div class="slide">
+            <h1>Review Questions</h1>
+            <h2>Test Your Understanding</h2>
+            
+            <div class="question-answer">
+                <div class="question">1. What are the three essential components of a problem statement?</div>
+                <div class="answer" style="display: none;">Context & Problem, Consequences, and Knowledge Gap</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">2. What does the "M" in SMART objectives stand for, and why is it important?</div>
+                <div class="answer" style="display: none;">Measurable - it's important because you need to be able to determine whether your objective has been achieved</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">3. Name three techniques for generating research questions.</div>
+                <div class="answer" style="display: none;">Literature review suggestions, behavioral analysis, relationship questions, comparative questions</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">4. What are the two main criteria for evaluating research questions?</div>
+                <div class="answer" style="display: none;">Interestingness and Feasibility</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">5. According to Bloom's Taxonomy, which level involves "breaking material into constituent parts"?</div>
+                <div class="answer" style="display: none;">Analyze level</div>
+            </div>
+
+            <p style="text-align: center; margin-top: 30px;"><em>Click "Next" to see the answers!</em></p>
+        </div>
+
+        <!-- Slide 14: Answers -->
+        <div class="slide">
+            <h1>Review Answers</h1>
+            <h2>Check Your Understanding</h2>
+            
+            <div class="question-answer">
+                <div class="question">1. What are the three essential components of a problem statement?</div>
+                <div class="answer"><strong>Answer:</strong> Context & Problem, Consequences, and Knowledge Gap</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">2. What does the "M" in SMART objectives stand for, and why is it important?</div>
+                <div class="answer"><strong>Answer:</strong> Measurable - it's important because you need to be able to determine whether your objective has been achieved</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">3. Name three techniques for generating research questions.</div>
+                <div class="answer"><strong>Answer:</strong> Literature review suggestions, behavioral analysis, relationship questions, comparative questions</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">4. What are the two main criteria for evaluating research questions?</div>
+                <div class="answer"><strong>Answer:</strong> Interestingness and Feasibility</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">5. According to Bloom's Taxonomy, which level involves "breaking material into constituent parts"?</div>
+                <div class="answer"><strong>Answer:</strong> Analyze level</div>
+            </div>
+        </div>
+
+        <!-- Slide 15: Next Steps -->
+        <div class="slide">
+            <h1>Next Steps & Resources</h1>
+            <h2>Moving Forward</h2>
+            
+            <div class="assignment-box">
+                <h3>This Week's Checklist:</h3>
+                <ul>
+                    <li>✓ Complete all assigned readings</li>
+                    <li>✓ Review your Week 3 literature review for gaps</li>
+                    <li>✓ Draft your problem statement (150-200 words)</li>
+                    <li>✓ Develop SMART research objectives</li>
+                    <li>✓ Create specific research questions</li>
+                    <li>✓ Submit your 500-750 word assignment</li>
+                    <li>✓ Take the Self-Quiz</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Additional Resources:</h3>
+                <ul>
+                    <li>Library support: library@uopeople.edu</li>
+                    <li>Learning Resource Center Course</li>
+                    <li>INFORMATION LITERACY page (course sidebar)</li>
+                    <li>Assignment rubric (check course homepage)</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="text-align: center;">
+                <h3>Remember: Strong research starts with clear objectives and focused questions!</h3>
+                <p>Good luck with your assignment!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">❮ Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next ❯</button>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            
+            document.getElementById('currentSlide').textContent = index + 1;
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === totalSlides - 1;
+
+            // Show answers for questions slide
+            if (index === 12) { // Questions slide
+                const answers = document.querySelectorAll('.answer');
+                answers.forEach(answer => answer.style.display = 'none');
+            }
+        }
+
+        function changeSlide(direction) {
+            const newIndex = currentSlideIndex + direction;
+            if (newIndex >= 0 && newIndex < totalSlides) {
+                currentSlideIndex = newIndex;
+                showSlide(currentSlideIndex);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (event.key === 'ArrowRight') {
+                changeSlide(1);
+            }
+        });
+
+        // Initialize
+        showSlide(0);
+
+        // Click questions to reveal answers on questions slide
+        document.addEventListener('click', function(event) {
+            if (currentSlideIndex === 12 && event.target.classList.contains('question')) {
+                const answer = event.target.nextElementSibling;
+                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+            }
+        });
+    </script>
+</body>
+</html>
