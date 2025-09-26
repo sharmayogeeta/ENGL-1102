@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGL 1102 Week 2 Presentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        .slide {
+            padding: 60px 80px;
+            min-height: calc(100vh - 120px);
+            display: none;
+            page-break-after: always;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        .slide h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+        }
+        
+        .slide h2 {
+            color: #34495e;
+            font-size: 2em;
+            margin: 30px 0 20px 0;
+            border-left: 5px solid #e74c3c;
+            padding-left: 20px;
+        }
+        
+        .slide h3 {
+            color: #2980b9;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+        
+        .slide ul, .slide ol {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        
+        .slide li {
+            margin: 10px 0;
+        }
+        
+        .highlight-box {
+            background: #ecf0f1;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .objective-card {
+            background: #f8f9fa;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .rhetorical-modes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .mode-card {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .assignment-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .nav-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .slide-number {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(52, 73, 94, 0.8);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .smart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .smart-card {
+            background: #e8f5e8;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .checklist {
+            background: #f0f8ff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .checklist ul {
+            list-style-type: none;
+        }
+        
+        .checklist li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-number" id="slideNumber">1 / 15</div>
+        
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <div style="text-align: center; padding-top: 100px;">
+                <h1 style="font-size: 3em; color: #2c3e50; border: none;">ENGL 1102</h1>
+                <h2 style="font-size: 2.5em; color: #e74c3c; border: none; margin: 20px 0;">English Composition 2</h2>
+                <h2 style="font-size: 2em; color: #3498db; border: none;">Week 2: Research Skills & Rhetorical Modes</h2>
+                <div style="margin: 50px 0; font-size: 1.3em;">
+                    <p><strong>Instructor:</strong> Yogeeta</p>
+                    <p><strong>University of the People</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Welcome & Overview -->
+        <div class="slide">
+            <h1>Welcome to Unit 2!</h1>
+            <div class="highlight-box">
+                <h3>🎯 This Week's Journey</h3>
+                <p>Master the foundational elements of effective academic and professional writing. Whether you're crafting research papers, persuasive proposals, or creative presentations, these skills are essential for your success.</p>
+            </div>
+            
+            <h2>Unit 2 Topics</h2>
+            <ul>
+                <li><strong>Literature Review</strong> – Finding Credible Sources</li>
+                <li><strong>Rhetorical Modes</strong> – argumentative, persuasive, expository, narrative, descriptive</li>
+                <li><strong>Paragraph Structure</strong> – thesis statement, topic sentences, supporting statements, conclusion</li>
+                <li><strong>Research Hypothesis</strong> – Developing clear, testable hypotheses</li>
+            </ul>
+        </div>
+
+        <!-- Slide 3: Learning Objectives -->
+        <div class="slide">
+            <h1>Learning Objectives</h1>
+            <p>By the end of this unit, you will be able to:</p>
+            
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <h3>🔬 Research Hypothesis</h3>
+                    <p>Develop clear research hypothesis based on a chosen topic</p>
+                </div>
+                <div class="objective-card">
+                    <h3>🔍 Credible Sources</h3>
+                    <p>Identify credible sources for literature reviews</p>
+                </div>
+                <div class="objective-card">
+                    <h3>📝 Paragraph Structure</h3>
+                    <p>Structure paragraphs with clear thesis, supporting sentences, and conclusion</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>💡 Key Success Factors</h3>
+                <ul>
+                    <li>Apply rhetorical modes in real-world contexts</li>
+                    <li>Communicate ideas with precision and clarity</li>
+                    <li>Use advanced writing strategies confidently</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 4: Research Hypothesis & SMART Goals -->
+        <div class="slide">
+            <h1>Research Hypothesis & SMART Goals</h1>
+            
+            <h2>What is a Research Hypothesis?</h2>
+            <div class="highlight-box">
+                <p>A research hypothesis is a clear, testable prediction about the relationship between variables in your study. It guides your research direction and methodology.</p>
+            </div>
+            
+            <h2>SMART Goals Framework</h2>
+            <div class="smart-grid">
+                <div class="smart-card">
+                    <h3>S</h3>
+                    <p><strong>Specific</strong><br>Clear and well-defined</p>
+                </div>
+                <div class="smart-card">
+                    <h3>M</h3>
+                    <p><strong>Measurable</strong><br>Quantifiable progress</p>
+                </div>
+                <div class="smart-card">
+                    <h3>A</h3>
+                    <p><strong>Achievable</strong><br>Realistic and attainable</p>
+                </div>
+                <div class="smart-card">
+                    <h3>R</h3>
+                    <p><strong>Relevant</strong><br>Important to your purpose</p>
+                </div>
+                <div class="smart-card">
+                    <h3>T</h3>
+                    <p><strong>Timely</strong><br>Time-bound deadline</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Credible Sources -->
+        <div class="slide">
+            <h1>Finding & Evaluating Credible Sources</h1>
+            
+            <h2>What Makes a Source Credible?</h2>
+            <div class="highlight-box">
+                <p>A credible source is <strong>free from bias</strong> and <strong>backed up with evidence</strong>. It is written by a trustworthy author or organization.</p>
+            </div>
+            
+            <h2>The CRAAP Test</h2>
+            <ul>
+                <li><strong>Currency:</strong> Is the source up-to-date?</li>
+                <li><strong>Relevance:</strong> Is the source relevant to your research?</li>
+                <li><strong>Authority:</strong> Who is the author? Are they trustworthy?</li>
+                <li><strong>Accuracy:</strong> Is the source supported by evidence?</li>
+                <li><strong>Purpose:</strong> What was the motive behind publishing this source?</li>
+            </ul>
+            
+            <h2>Types of Sources</h2>
+            <ul>
+                <li><strong>Primary:</strong> First-hand evidence (interviews, statistics, original research)</li>
+                <li><strong>Secondary:</strong> Analysis of primary sources (journal articles, books)</li>
+                <li><strong>Tertiary:</strong> Consolidation of sources (encyclopedias, dictionaries)</li>
+            </ul>
+        </div>
+
+        <!-- Slide 6: Where to Find Credible Sources -->
+        <div class="slide">
+            <h1>Where to Find Credible Sources</h1>
+            
+            <h2>Academic Databases</h2>
+            <ul>
+                <li><strong>JSTOR</strong> - Academic journals and books</li>
+                <li><strong>Google Scholar</strong> - Academic search engine</li>
+                <li><strong>PubMed</strong> - Medical and life sciences</li>
+                <li><strong>Project Muse</strong> - Humanities and social sciences</li>
+            </ul>
+            
+            <h2>Evaluating Web Sources</h2>
+            <div class="highlight-box">
+                <h3>Trusted Domain Extensions:</h3>
+                <ul>
+                    <li><strong>.edu</strong> - Educational institutions</li>
+                    <li><strong>.gov</strong> - Government websites</li>
+                    <li><strong>.org</strong> - Non-profit organizations</li>
+                </ul>
+            </div>
+            
+            <h2>Red Flags to Avoid</h2>
+            <ul>
+                <li>Vague terms and buzzwords</li>
+                <li>Emotional or subjective language</li>
+                <li>No author or publication date</li>
+                <li>Claims without evidence</li>
+            </ul>
+        </div>
+
+        <!-- Slide 7: Rhetorical Modes Overview -->
+        <div class="slide">
+            <h1>Rhetorical Modes in Writing</h1>
+            <p>Essential tools to structure and convey ideas effectively for specific purposes and audiences.</p>
+            
+            <div class="rhetorical-modes">
+                <div class="mode-card">
+                    <h3>Argumentative</h3>
+                    <p>Persuade through logic and evidence</p>
+                </div>
+                <div class="mode-card">
+                    <h3>Persuasive</h3>
+                    <p>Influence emotions and beliefs</p>
+                </div>
+                <div class="mode-card">
+                    <h3>Expository</h3>
+                    <p>Explain and inform objectively</p>
+                </div>
+                <div class="mode-card">
+                    <h3>Narrative</h3>
+                    <p>Tell stories and present events</p>
+                </div>
+                <div class="mode-card">
+                    <h3>Descriptive</h3>
+                    <p>Create vivid imagery with details</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>💡 Key Point</h3>
+                <p>Research writing often combines multiple rhetorical modes to achieve clarity, persuasion, and engagement.</p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Argumentative Mode -->
+        <div class="slide">
+            <h1>Argumentative Mode</h1>
+            
+            <div class="highlight-box">
+                <h3>Purpose</h3>
+                <p>Present a well-reasoned case supported by evidence to convince readers through logical reasoning.</p>
+            </div>
+            
+            <h2>Key Features</h2>
+            <ul>
+                <li>Claims supported by logic, evidence, and analysis</li>
+                <li>Use of credible sources to strengthen arguments</li>
+                <li>Counterarguments addressed to reinforce stance</li>
+                <li>Clear thesis statement</li>
+            </ul>
+            
+            <h2>Applications in Research</h2>
+            <ul>
+                <li>Position papers and critical analyses</li>
+                <li>Research-based arguments in essays and articles</li>
+            </ul>
+            
+            <h2>Example</h2>
+            <div class="assignment-box">
+                <p><strong>Topic:</strong> "Renewable energy policies are essential for mitigating climate change"</p>
+                <p><strong>Approach:</strong> Present thesis, support with emission reduction data, address economic concerns</p>
+            </div>
+        </div>
+
+        <!-- Slide 9: Persuasive Mode -->
+        <div class="slide">
+            <h1>Persuasive Mode</h1>
+            
+            <div class="highlight-box">
+                <h3>Purpose</h3>
+                <p>Convince readers to adopt a particular viewpoint by appealing to emotions, values, and ethical considerations alongside logical reasoning.</p>
+            </div>
+            
+            <h2>Key Features</h2>
+            <ul>
+                <li>Emotional and ethical appeals (pathos and ethos)</li>
+                <li>Strong, convincing language</li>
+                <li>Attention to audience's beliefs and values</li>
+                <li>Combination of logic and emotion</li>
+            </ul>
+            
+            <h2>Applications in Research</h2>
+            <ul>
+                <li>Persuasive essays and advocacy papers</li>
+                <li>Grant applications and proposals</li>
+                <li>Opinion pieces</li>
+            </ul>
+            
+            <h2>Example</h2>
+            <div class="assignment-box">
+                <p><strong>Topic:</strong> Mandatory vaccinations in schools</p>
+                <p><strong>Approach:</strong> Combine emotional appeals (family stories) with factual evidence and ethical arguments about protecting vulnerable populations</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Expository, Narrative & Descriptive Modes -->
+        <div class="slide">
+            <h1>Expository, Narrative & Descriptive Modes</h1>
+            
+            <h2>Expository Mode</h2>
+            <div class="highlight-box">
+                <p><strong>Purpose:</strong> Explain or inform without personal opinions</p>
+                <ul>
+                    <li>Clear, objective presentation</li>
+                    <li>Logical organization with headings</li>
+                    <li>Examples, definitions, and data</li>
+                </ul>
+                <p><strong>Applications:</strong> Literature reviews, research reports, instructional manuals</p>
+            </div>
+            
+            <h2>Narrative Mode</h2>
+            <div class="highlight-box">
+                <p><strong>Purpose:</strong> Tell stories or present events chronologically</p>
+                <ul>
+                    <li>Storytelling structure</li>
+                    <li>Anecdotes and case studies</li>
+                    <li>Vivid descriptions</li>
+                </ul>
+                <p><strong>Applications:</strong> Case studies, ethnographic reports, reflective essays</p>
+            </div>
+            
+            <h2>Descriptive Mode</h2>
+            <div class="highlight-box">
+                <p><strong>Purpose:</strong> Create vivid imagery using sensory details</p>
+                <ul>
+                    <li>Sensory details (sight, sound, touch, taste, smell)</li>
+                    <li>Figurative language and imagery</li>
+                    <li>Precise descriptions</li>
+                </ul>
+                <p><strong>Applications:</strong> Experimental descriptions, environmental settings</p>
+            </div>
+        </div>
+
+        <!-- Slide 11: Paragraph Structure -->
+        <div class="slide">
+            <h1>Effective Paragraph Structure</h1>
+            
+            <h2>Essential Components</h2>
+            <div class="highlight-box">
+                <h3>1. Thesis Statement</h3>
+                <p>Clear, arguable claim that guides your entire essay</p>
+                
+                <h3>2. Topic Sentences</h3>
+                <p>First sentence of each paragraph that introduces the main idea</p>
+                
+                <h3>3. Supporting Statements</h3>
+                <p>Evidence, examples, and analysis that support your topic sentence</p>
+                
+                <h3>4. Conclusion</h3>
+                <p>Summarizes main points and reinforces thesis without repetition</p>
+            </div>
+            
+            <h2>Paragraph Flow</h2>
+            <ul>
+                <li><strong>Unity:</strong> All sentences relate to one main idea</li>
+                <li><strong>Coherence:</strong> Ideas flow logically with transitions</li>
+                <li><strong>Development:</strong> Adequate support and explanation</li>
+            </ul>
+        </div>
+
+        <!-- Slide 12: Discussion Forum Assignment -->
+        <div class="slide">
+            <h1>Discussion Forum Assignment</h1>
+            
+            <div class="assignment-box">
+                <h2>Part 1: Rhetorical Mode Overview</h2>
+                <p>Select <strong>ONE</strong> rhetorical mode and write a brief overview explaining its characteristics and purpose.</p>
+                
+                <h2>Part 2: Five-Paragraph Essay</h2>
+                <p>Write a five-paragraph essay using your selected rhetorical mode:</p>
+                <ul>
+                    <li><strong>Argumentative:</strong> Remote work enhances productivity (argue for or against)</li>
+                    <li><strong>Persuasive:</strong> Advocating for small businesses to adopt digital marketing</li>
+                    <li><strong>Expository:</strong> Key steps in starting an e-commerce business</li>
+                    <li><strong>Narrative:</strong> Story of launching your first business (real or imagined)</li>
+                    <li><strong>Descriptive:</strong> Energy and atmosphere of a high-energy startup office</li>
+                </ul>
+            </div>
+            
+            <h2>Requirements</h2>
+            <ul>
+                <li><strong>Length:</strong> 500-750 words (excluding references)</li>
+                <li><strong>Due:</strong> Initial post by Sunday, replies by Wednesday</li>
+                <li><strong>Citations:</strong> Use APA format for all sources</li>
+            </ul>
+        </div>
+
+        <!-- Slide 13: Assignment Activity -->
+        <div class="slide">
+            <h1>Assignment Activity</h1>
+            
+            <div class="assignment-box">
+                <h2>Research Hypothesis & Credible Sources</h2>
+                
+                <h3>Part 1: Research Hypothesis</h3>
+                <ul>
+                    <li>Choose a research topic related to business or your field of interest</li>
+                    <li>Develop a clear and testable hypothesis based on your topic</li>
+                </ul>
+                
+                <h3>Part 2: Credible Sources</h3>
+                <ul>
+                    <li>Identify and describe <strong>five credible online sources</strong> for literature review</li>
+                    <li>Explain why each source is credible (peer-reviewed, reputable authors, data reliability)</li>
+                </ul>
+            </div>
+            
+            <h2>Submission Requirements</h2>
+            <ul>
+                <li><strong>Length:</strong> 500-750 words (excluding references and title)</li>
+                <li><strong>Format:</strong> Double-spaced, Times New Roman, 12pt font</li>
+                <li><strong>Sources:</strong> High-quality, credible, relevant sources</li>
+                <li><strong>Citations:</strong> APA format with in-text citations</li>
+            </ul>
+        </div>
+
+        <!-- Slide 14: Weekly Checklist -->
+        <div class="slide">
+            <h1>Week 2 Checklist</h1>
+            
+            <div class="checklist">
+                <h2>📋 Complete These Tasks</h2>
+                <ul>
+                    <li>Read through the Learning Guide and Reading Assignments</li>
+                    <li>Complete the Discussion Assignment (rhetorical mode essay)</li>
+                    <li>Respond to two classmates' posts in Discussion Forum</li>
+                    <li>Complete and submit the Assignment Activity (hypothesis & sources)</li>
+                    <li>Take and submit the Self-Quiz</li>
+                </ul>
+            </div>
+            
+            <h2>📚 Reading Assignments</h2>
+            <ul>
+                <li><strong>Hall & Wallace:</strong> Chapters 3-4 (Paragraphs and Essays)</li>
+                <li><strong>Weaver et al.:</strong> Chapters 3-4 (Rhetorical Modes and Research)</li>
+                <li><strong>Serdikoff:</strong> Chapter 3 (Scientific Process and Hypothesis)</li>
+                <li><strong>Additional articles:</strong> SMART Goals, Credible Sources, Source Finding</li>
+            </ul>
+            
+            <h2>🎯 Success Tips</h2>
+            <ul>
+                <li>Start early and manage your time effectively</li>
+                <li>Use the UoPeople APA Tutorials for proper citations</li>
+                <li>Contact the librarian (library@uopeople.edu) if you need help</li>
+                <li>Engage meaningfully with classmates in discussions</li>
+            </ul>
+        </div>
+
+        <!-- Slide 15: Questions & Resources -->
+        <div class="slide">
+            <h1>Questions & Resources</h1>
+            
+            <h2>🤔 Key Questions to Consider</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li>What are SMART goals and how do they apply to research?</li>
+                    <li>What are the key features of a strong hypothesis?</li>
+                    <li>Why is it essential to use credible sources?</li>
+                    <li>How do different rhetorical modes serve different purposes?</li>
+                </ul>
+            </div>
+            
+            <h2>📚 Additional Resources</h2>
+            <ul>
+                <li><strong>UoPeople APA Tutorials</strong> - Learning Resource Center</li>
+                <li><strong>Library Support:</strong> library@uopeople.edu</li>
+                <li><strong>Learning Resource Center Course</strong> - Expert assistance</li>
+            </ul>
+            
+            <h2>💡 Remember</h2>
+            <div class="assignment-box">
+                <p><strong>Academic Integrity:</strong> Report any suspected plagiarism or violations of the Academic Code of Conduct to your instructor immediately.</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <h2>Good luck with your assignments!</h2>
+                <p><em>Remember: Quality research and clear writing are skills that will serve you throughout your academic and professional career.</em></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()">← Previous</button>
+        <button class="nav-btn" onclick="nextSlide()">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('slideNumber').textContent = `${currentSlide + 1} / ${totalSlides}`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
