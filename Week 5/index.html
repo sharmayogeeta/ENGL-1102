@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGL 1102 - Week 5: Research Methods & Formal Communications</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+        
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .slide {
+            display: none;
+            width: 90%;
+            max-width: 1200px;
+            height: 85vh;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 60px;
+            overflow-y: auto;
+            animation: fadeIn 0.5s;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            font-size: 2em;
+            margin: 30px 0 15px 0;
+        }
+        
+        h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin: 20px 0 10px 0;
+        }
+        
+        p, li {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 5px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .example-box {
+            background: #e7f3ff;
+            padding: 20px;
+            border-left: 5px solid #2196F3;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .tip-box {
+            background: #e8f5e9;
+            padding: 15px;
+            border-left: 5px solid #4caf50;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+        
+        .nav-btn {
+            background: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: #667eea;
+            color: white;
+        }
+        
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .slide-counter {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 2px solid #667eea;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .intro-slide {
+            text-align: center;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .intro-slide h1 {
+            font-size: 3em;
+            border: none;
+        }
+        
+        .instructor-info {
+            margin-top: 30px;
+            font-size: 1.3em;
+            color: #666;
+        }
+        
+        .question-box {
+            background: #fff9e6;
+            padding: 20px;
+            border: 3px solid #ffd700;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        
+        .answer-box {
+            background: #e6f7ff;
+            padding: 20px;
+            border: 3px solid #1890ff;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-counter">
+        <span id="currentSlide">1</span> / <span id="totalSlides">17</span>
+    </div>
+    
+    <div class="slide-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active intro-slide">
+            <h1>ENGL 1102: English Composition 2</h1>
+            <h2>Week 5: Research Methods & Formal Communications</h2>
+            <div class="instructor-info">
+                <p>Instructor: Yogeeta Sharma</p>
+                <p>University of the People</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Week 4 Recap -->
+        <div class="slide">
+            <h1>📚 Week 4 Recap</h1>
+            <h2>What We Covered Last Week</h2>
+            <ul>
+                <li><strong>Rhetorical Analysis:</strong> Examined how authors use ethos, pathos, and logos to persuade audiences</li>
+                <li><strong>Source Evaluation:</strong> Learned to assess credibility, relevance, and reliability of sources</li>
+                <li><strong>Research Planning:</strong> Developed strategies for identifying research topics and questions</li>
+                <li><strong>Academic Integrity:</strong> Understood the importance of proper citation and avoiding plagiarism</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 Key Takeaway:</strong> Effective research begins with understanding your purpose, audience, and the rhetorical situation.
+            </div>
+            
+            <h3>Connecting to Week 5</h3>
+            <p>This week, we build on these foundations by exploring <strong>specific research methodologies</strong> and learning how to <strong>communicate professionally</strong> about our research.</p>
+        </div>
+
+        <!-- Slide 3: Learning Objectives -->
+        <div class="slide">
+            <h1>🎯 Learning Objectives</h1>
+            <h2>By the End of This Week, You Will Be Able To:</h2>
+            
+            <ol>
+                <li><strong>Identify and Describe</strong> qualitative, quantitative, and mixed-methods research approaches</li>
+                <li><strong>Determine</strong> the appropriate research methodology for your study</li>
+                <li><strong>Justify</strong> your choice of research method based on your research goals</li>
+                <li><strong>Draft Professional Emails</strong> for academic and research purposes</li>
+            </ol>
+            
+            <div class="highlight">
+                <strong>Why This Matters:</strong> Choosing the right research method is like choosing the right tool for a job. The method you select shapes what you can discover and how you interpret your findings.
+            </div>
+        </div>
+
+        <!-- Slide 4: Introduction to Research Methods -->
+        <div class="slide">
+            <h1>🔬 What Are Research Methods?</h1>
+            
+            <p><strong>Research methods</strong> are systematic approaches used to collect, analyze, and interpret data to answer research questions.</p>
+            
+            <h2>The Three Main Approaches</h2>
+            
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>Focus</th>
+                    <th>Data Type</th>
+                </tr>
+                <tr>
+                    <td><strong>Qualitative</strong></td>
+                    <td>Understanding experiences, meanings, and perspectives</td>
+                    <td>Words, images, observations</td>
+                </tr>
+                <tr>
+                    <td><strong>Quantitative</strong></td>
+                    <td>Measuring variables and testing hypotheses</td>
+                    <td>Numbers, statistics</td>
+                </tr>
+                <tr>
+                    <td><strong>Mixed-Methods</strong></td>
+                    <td>Combining both approaches</td>
+                    <td>Both words and numbers</td>
+                </tr>
+            </table>
+            
+            <div class="tip-box">
+                <strong>Remember:</strong> No method is inherently better than another—each serves different research purposes!
+            </div>
+        </div>
+
+        <!-- Slide 5: Qualitative Research -->
+        <div class="slide">
+            <h1>🗣️ Qualitative Research</h1>
+            
+            <h2>What Is It?</h2>
+            <p>Qualitative research explores complex human experiences, behaviors, and social phenomena through <strong>in-depth, descriptive data</strong>.</p>
+            
+            <h3>Key Characteristics</h3>
+            <ul>
+                <li>Focuses on <strong>"why"</strong> and <strong>"how"</strong> questions</li>
+                <li>Uses small, purposeful samples</li>
+                <li>Collects detailed, rich data</li>
+                <li>Researcher is actively involved in data collection</li>
+                <li>Findings are interpretive and context-specific</li>
+            </ul>
+            
+            <h3>Common Data Collection Methods</h3>
+            <ul>
+                <li><strong>Interviews:</strong> One-on-one conversations</li>
+                <li><strong>Focus Groups:</strong> Group discussions</li>
+                <li><strong>Observations:</strong> Watching and recording behaviors</li>
+                <li><strong>Document Analysis:</strong> Examining texts, images, or artifacts</li>
+            </ul>
+        </div>
+
+        <!-- Slide 6: Qualitative Research Example -->
+        <div class="slide">
+            <h1>🗣️ Qualitative Research Example</h1>
+            
+            <div class="example-box">
+                <h3>Research Question:</h3>
+                <p>"How do families of teenage suicide victims cope with their loss?"</p>
+                
+                <h3>Method:</h3>
+                <p>Researchers conducted <strong>unstructured interviews</strong> with families of 10 teenage suicide victims in rural Sweden.</p>
+                
+                <h3>Data Collection:</h3>
+                <ul>
+                    <li>Interviews began with: "Tell us about your loved one"</li>
+                    <li>Families could discuss whatever felt important</li>
+                    <li>Researchers listened and followed up on themes</li>
+                </ul>
+                
+                <h3>Key Finding:</h3>
+                <p>Even as life returned to "normal," families continued struggling with the question of <strong>why</strong> the suicide occurred—especially when it was unexpected.</p>
+                
+                <h3>Why Qualitative?</h3>
+                <p>This approach captured the <strong>lived experience</strong> and emotional complexity that numbers alone couldn't reveal.</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Quantitative Research -->
+        <div class="slide">
+            <h1>📊 Quantitative Research</h1>
+            
+            <h2>What Is It?</h2>
+            <p>Quantitative research uses <strong>numerical data</strong> and statistical analysis to test hypotheses and measure relationships between variables.</p>
+            
+            <h3>Key Characteristics</h3>
+            <ul>
+                <li>Focuses on <strong>"how many"</strong> and <strong>"to what extent"</strong> questions</li>
+                <li>Uses large, representative samples</li>
+                <li>Collects measurable, numerical data</li>
+                <li>Researcher maintains objectivity</li>
+                <li>Results can be generalized to larger populations</li>
+            </ul>
+            
+            <h3>Common Data Collection Methods</h3>
+            <ul>
+                <li><strong>Surveys/Questionnaires:</strong> Standardized questions</li>
+                <li><strong>Experiments:</strong> Controlled tests</li>
+                <li><strong>Tests:</strong> Standardized assessments</li>
+                <li><strong>Secondary Data Analysis:</strong> Using existing datasets</li>
+            </ul>
+        </div>
+
+        <!-- Slide 8: Quantitative Research Example -->
+        <div class="slide">
+            <h1>📊 Quantitative Research Example</h1>
+            
+            <div class="example-box">
+                <h3>Research Question:</h3>
+                <p>"What is the relationship between feelings of loneliness and anxiety symptoms?"</p>
+                
+                <h3>Method:</h3>
+                <ul>
+                    <li>Administered <strong>Lonely Inventory</strong> scale</li>
+                    <li>Measured anxiety through standardized questionnaire</li>
+                    <li>Tested 500 participants</li>
+                    <li>Used statistical analysis to find correlations</li>
+                </ul>
+                
+                <h3>Results:</h3>
+                <p>Statistical analysis showed a <strong>significant positive correlation</strong> between loneliness scores and anxiety levels.</p>
+                
+                <h3>Why Quantitative?</h3>
+                <p>This approach allowed researchers to:</p>
+                <ul>
+                    <li>Measure the <strong>strength</strong> of the relationship</li>
+                    <li>Test the finding across a <strong>large sample</strong></li>
+                    <li>Make <strong>generalizable</strong> conclusions</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 9: Sampling Methods -->
+        <div class="slide">
+            <h1>🎲 Sampling Methods</h1>
+            
+            <p><strong>Sampling</strong> is the process of selecting participants from a larger population to study.</p>
+            
+            <h2>Simple Random Sampling</h2>
+            <p>Every member of the population has an <strong>equal chance</strong> of being selected.</p>
+            
+            <div class="example-box">
+                <strong>Example:</strong> Drawing names from a hat, or using a random number generator
+            </div>
+            
+            <h3>When to Use:</h3>
+            <ul>
+                <li>You want results that can be generalized to the whole population</li>
+                <li>All members of the population are accessible</li>
+                <li>You want to minimize bias</li>
+            </ul>
+            
+            <h3>Limitations:</h3>
+            <ul>
+                <li>If sampling online, people without internet access cannot be selected</li>
+                <li>May not be practical for hard-to-reach populations</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 Remember:</strong> The goal of random sampling is to get a <strong>representative sample</strong> that reflects the larger population.
+            </div>
+        </div>
+
+        <!-- Slide 10: Mixed-Methods Research -->
+        <div class="slide">
+            <h1>🔄 Mixed-Methods Research</h1>
+            
+            <h2>What Is It?</h2>
+            <p>Mixed-methods research <strong>combines both qualitative and quantitative approaches</strong> to provide a more complete understanding of a research problem.</p>
+            
+            <h3>Why Use Mixed-Methods?</h3>
+            <ul>
+                <li><strong>Triangulation:</strong> Validate findings using multiple sources</li>
+                <li><strong>Complementarity:</strong> Quantitative data shows "what" and "how much," while qualitative explains "why" and "how"</li>
+                <li><strong>Development:</strong> Use one method to inform the other</li>
+                <li><strong>Expansion:</strong> Explore different aspects of the research question</li>
+            </ul>
+            
+            <div class="example-box">
+                <h3>Example Study:</h3>
+                <p><strong>Research Question:</strong> "How does ethnicity relate to female engineering students' sense of belonging?"</p>
+                
+                <p><strong>Phase 1 (Quantitative):</strong> Survey students rating their sense of belonging—found no statistical differences between ethnic groups.</p>
+                
+                <p><strong>Phase 2 (Qualitative):</strong> Interviews revealed that minority students valued the university's cultural diversity, which <strong>enhanced</strong> their sense of belonging.</p>
+                
+                <p><strong>Insight:</strong> Without the qualitative phase, researchers would have missed this important finding!</p>
+            </div>
+        </div>
+
+        <!-- Slide 11: Choosing Your Research Method -->
+        <div class="slide">
+            <h1>🤔 How to Choose the Right Method</h1>
+            
+            <h2>Ask Yourself These Questions</h2>
+            
+            <table>
+                <tr>
+                    <th>Question</th>
+                    <th>Leads To</th>
+                </tr>
+                <tr>
+                    <td>Do I want to understand experiences and meanings?</td>
+                    <td>→ Qualitative</td>
+                </tr>
+                <tr>
+                    <td>Do I want to measure relationships between variables?</td>
+                    <td>→ Quantitative</td>
+                </tr>
+                <tr>
+                    <td>Do I need both depth and breadth?</td>
+                    <td>→ Mixed-Methods</td>
+                </tr>
+                <tr>
+                    <td>Is my question exploratory ("What is happening?")</td>
+                    <td>→ Qualitative</td>
+                </tr>
+                <tr>
+                    <td>Is my question confirmatory ("Does X cause Y?")</td>
+                    <td>→ Quantitative</td>
+                </tr>
+            </table>
+            
+            <div class="highlight">
+                <strong>Important:</strong> Your research question should guide your methodology—not the other way around!
+            </div>
+        </div>
+
+        <!-- Slide 12: Professional Email Writing -->
+        <div class="slide">
+            <h1>📧 Writing Professional Emails</h1>
+            
+            <h2>Why Does This Matter?</h2>
+            <p>As a researcher, you'll need to communicate with advisors, collaborators, participants, and funding bodies. Professional emails demonstrate your credibility and respect for others' time.</p>
+            
+            <h2>Email Structure</h2>
+            <ol>
+                <li><strong>Subject Line:</strong> Clear and specific</li>
+                <li><strong>Greeting:</strong> Professional salutation</li>
+                <li><strong>Opening:</strong> State your purpose immediately</li>
+                <li><strong>Body:</strong> Provide necessary details concisely</li>
+                <li><strong>Call to Action:</strong> Clearly state what you need</li>
+                <li><strong>Closing:</strong> Thank the recipient</li>
+                <li><strong>Signature:</strong> Include your full contact information</li>
+            </ol>
+        </div>
+
+        <!-- Slide 13: Email Example -->
+        <div class="slide">
+            <h1>📧 Professional Email Example</h1>
+            
+            <div class="example-box">
+                <p><strong>Subject:</strong> Request for Feedback on Research Proposal - Mixed-Methods Study</p>
+                
+                <p>Dear Dr. Martinez,</p>
+                
+                <p>I hope this email finds you well. I am writing to seek your guidance on a research proposal I am developing for my English Composition course at University of the People.</p>
+                
+                <p>My study explores how social media usage affects college students' writing skills. I plan to use a <strong>mixed-methods approach</strong>, combining:</p>
+                <ul>
+                    <li>Quantitative surveys measuring time spent on social media and writing assessment scores (200 participants)</li>
+                    <li>Qualitative interviews exploring students' perceptions of how social media influences their writing (15 participants)</li>
+                </ul>
+                
+                <p>I believe this methodology is appropriate because the quantitative data will establish whether a correlation exists, while the qualitative component will help explain the mechanisms behind any observed patterns.</p>
+                
+                <p>Would you be available for a brief 15-minute call next week to discuss my approach? I would greatly appreciate your insights, particularly regarding my sampling strategy.</p>
+                
+                <p>Thank you for considering my request. I look forward to hearing from you.</p>
+                
+                <p>Best regards,<br>
+                Sarah Johnson<br>
+                Student, ENGL 1102<br>
+                sarah.johnson@uopeople.edu</p>
+            </div>
+        </div>
+
+        <!-- Slide 14: Email Best Practices -->
+        <div class="slide">
+            <h1>✅ Email Best Practices</h1>
+            
+            <h2>DO:</h2>
+            <ul>
+                <li>✓ Use a professional email address</li>
+                <li>✓ Write a clear, specific subject line</li>
+                <li>✓ Keep it concise (aim for 200-300 words)</li>
+                <li>✓ Proofread for grammar and spelling</li>
+                <li>✓ Use formal language and proper punctuation</li>
+                <li>✓ Clearly state what you're asking for</li>
+                <li>✓ Be respectful of the recipient's time</li>
+                <li>✓ Include a professional signature</li>
+            </ul>
+            
+            <h2>DON'T:</h2>
+            <ul>
+                <li>✗ Use casual language or slang</li>
+                <li>✗ Write in all caps</li>
+                <li>✗ Use emojis or text speak</li>
+                <li>✗ Send without proofreading</li>
+                <li>✗ Make demands—make polite requests</li>
+                <li>✗ Include irrelevant information</li>
+                <li>✗ Forget to include context</li>
+            </ul>
+        </div>
+
+        <!-- Slide 15: Discussion Assignment -->
+        <div class="slide">
+            <h1>💬 Discussion Assignment</h1>
+            
+            <h2>Your Task</h2>
+            <p>Draft a professional email to a potential advisor or collaborator that includes:</p>
+            
+            <ol>
+                <li><strong>Explain your research idea</strong> clearly and concisely</li>
+                <li><strong>Identify which research methodology</strong> (qualitative, quantitative, or mixed-methods) best suits your study</li>
+                <li><strong>Justify why this approach</strong> is most appropriate for your research goals</li>
+                <li><strong>Seek feedback or guidance</strong> in a professional manner</li>
+            </ol>
+            
+            <h3>Requirements</h3>
+            <ul>
+                <li>Length: 200-350 words (not including references)</li>
+                <li>Focus on: <strong>clarity, tone, and conciseness</strong></li>
+                <li>Due: Initial post by Sunday, replies to 2 peers by Wednesday</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 Tip:</strong> Think of a real research topic you're interested in. This will make your email more authentic and engaging!
+            </div>
+        </div>
+
+        <!-- Slide 16: Questions -->
+        <div class="slide">
+            <h1>❓ Test Your Understanding</h1>
+            
+            <div class="question-box">
+                <strong>Question 1:</strong> A researcher wants to understand "how many students drop out of college annually?" Which research method should they use?
+            </div>
+            
+            <div class="question-box">
+                <strong>Question 2:</strong> A researcher wants to explore "why students feel disconnected from their college community." Which research method is most appropriate?
+            </div>
+            
+            <div class="question-box">
+                <strong>Question 3:</strong> What are the three main components that make an email professional?
+            </div>
+            
+            <div class="question-box">
+                <strong>Question 4:</strong> When would you choose mixed-methods research over qualitative or quantitative alone?
+            </div>
+            
+            <div class="question-box">
+                <strong>Question 5:</strong> In simple random sampling, what is the key characteristic that makes it "random"?
+            </div>
+        </div>
+
+        <!-- Slide 17: Answers -->
+        <div class="slide">
+            <h1>✔️ Answers</h1>
+            
+            <div class="answer-box">
+                <strong>Answer 1:</strong> <strong>Quantitative research.</strong> This question asks "how many," which requires numerical data and statistical analysis to measure dropout rates.
+            </div>
+            
+            <div class="answer-box">
+                <strong>Answer 2:</strong> <strong>Qualitative research.</strong> The word "why" indicates a need to understand experiences, meanings, and perspectives—best captured through interviews, focus groups, or observations.
+            </div>
+            
+            <div class="answer-box">
+                <strong>Answer 3:</strong> <strong>1) Clarity</strong> - clear purpose and request; <strong>2) Professional tone</strong> - formal language and respectful approach; <strong>3) Conciseness</strong> - brief and to-the-point, respecting the recipient's time.
+            </div>
+            
+            <div class="answer-box">
+                <strong>Answer 4:</strong> Use mixed-methods when you need both <strong>depth</strong> (qualitative) and <strong>breadth</strong> (quantitative), when findings from one method can explain or validate the other, or when your research question requires both numerical data and contextual understanding.
+            </div>
+            
+            <div class="answer-box">
+                <strong>Answer 5:</strong> Every member of the population has an <strong>equal chance of being selected</strong>, which minimizes bias and helps create a representative sample.
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('totalSlides').textContent = totalSlides;
+        
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            
+            document.getElementById('currentSlide').textContent = currentSlide + 1;
+            
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+            
+            slides[currentSlide].scrollTop = 0;
+        }
+        
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                if (currentSlide > 0) changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                if (currentSlide < totalSlides - 1) changeSlide(1);
+            }
+        });
+        
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
