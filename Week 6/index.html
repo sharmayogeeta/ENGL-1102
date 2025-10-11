@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGL 1102 Week 6: Writing Reports</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+        
+        .presentation {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slide {
+            display: none;
+            width: 90%;
+            max-width: 1200px;
+            height: 85vh;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 60px;
+            position: relative;
+            overflow-y: auto;
+        }
+        
+        .slide.active {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 4px solid #764ba2;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            font-size: 2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p, li {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .example-box {
+            background-color: #e7f3ff;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .tip-box {
+            background-color: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .warning-box {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+        
+        .nav-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .nav-btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .nav-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .slide-counter {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            background: rgba(102, 126, 234, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1em;
+            z-index: 1000;
+        }
+        
+        .instructor-info {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #667eea;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .question {
+            background-color: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        
+        .answer {
+            background-color: #d4edda;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">20</span>
+    </div>
+    
+    <div class="presentation">
+        <!-- Slide 1: Title Slide -->
+        <div class="slide active">
+            <h1>ENGL 1102: English Composition 2</h1>
+            <h2 style="text-align: center; color: #764ba2; margin-top: 50px;">Week 6: Writing Reports</h2>
+            <h3 style="text-align: center; margin-top: 50px;">Analyzing Data & Communicating Research Findings</h3>
+            <div class="instructor-info">
+                <p style="font-size: 1.3em; margin-top: 100px;">Instructor: Yogeeta Sharma</p>
+                <p style="font-size: 1.1em;">University of the People</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Recap of Week 5 -->
+        <div class="slide">
+            <h1>📚 Recap: Week 5</h1>
+            <h2>What We Learned Last Week</h2>
+            
+            <h3>1. Research Skills</h3>
+            <ul>
+                <li><span class="highlight">Summarizing:</span> Condensing main ideas from sources into brief overviews</li>
+                <li><span class="highlight">Paraphrasing:</span> Restating ideas in your own words while maintaining original meaning</li>
+                <li><span class="highlight">Synthesizing:</span> Combining information from multiple sources to create new understanding</li>
+            </ul>
+            
+            <h3>2. Research Objectives</h3>
+            <ul>
+                <li>Developed clear, focused research questions</li>
+                <li>Identified specific goals for your research projects</li>
+                <li>Aligned objectives with available data and resources</li>
+            </ul>
+            
+            <h3>3. Persuasive Communication</h3>
+            <ul>
+                <li>Wrote persuasive emails about research topics</li>
+                <li>Used professional tone and structure</li>
+                <li>Applied rhetorical strategies to convince audiences</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 Key Takeaway:</strong> Week 5 built your foundation for gathering and organizing research information. Week 6 will teach you how to ANALYZE and REPORT these findings effectively!
+            </div>
+        </div>
+
+        <!-- Slide 3: Week 6 Overview -->
+        <div class="slide">
+            <h1>📋 Week 6 Overview</h1>
+            
+            <h2>Topics We'll Cover</h2>
+            <ol>
+                <li><strong>Research Discussions and Findings</strong>
+                    <ul>
+                        <li>How to present research results clearly</li>
+                        <li>Interpreting what data means</li>
+                    </ul>
+                </li>
+                <li><strong>Analyzing Charts</strong>
+                    <ul>
+                        <li>Reading and understanding visual data</li>
+                        <li>Drawing conclusions from graphs and charts</li>
+                    </ul>
+                </li>
+                <li><strong>Writing Reports</strong>
+                    <ul>
+                        <li>Formal report structure</li>
+                        <li>Professional writing style</li>
+                        <li>Effective communication of findings</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <div class="example-box">
+                <strong>🎯 Real-World Application:</strong> These skills are essential in virtually every profession! Whether you're in business, healthcare, education, or technology, you'll need to analyze data and present findings to stakeholders, clients, or colleagues.
+            </div>
+        </div>
+
+        <!-- Slide 4: Learning Objectives -->
+        <div class="slide">
+            <h1>🎯 Learning Objectives</h1>
+            <h2>By the End of This Week, You Will Be Able To:</h2>
+            
+            <h3>Objective 1: Present and Interpret Research Findings Effectively</h3>
+            <ul>
+                <li>Communicate complex data in understandable ways</li>
+                <li>Explain what your findings mean in context</li>
+                <li>Connect data to real-world implications</li>
+                <li>Structure your presentation logically</li>
+            </ul>
+            
+            <h3>Objective 2: Analyze Data Using Appropriate Techniques and Tools</h3>
+            <ul>
+                <li>Read and interpret charts, graphs, and tables</li>
+                <li>Identify patterns and trends in quantitative data</li>
+                <li>Use statistical information to support arguments</li>
+                <li>Apply appropriate analytical methods</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 Success Strategy:</strong> Focus on understanding the "why" behind the data, not just the "what." Anyone can read numbers, but skilled researchers can explain their significance!
+            </div>
+        </div>
+
+        <!-- Slide 5: Introduction to Unit 6 -->
+        <div class="slide">
+            <h1>🚀 Introduction to Unit 6</h1>
+            
+            <h2>Why Is This Unit Important?</h2>
+            <p>Effective communication of results is a <span class="highlight">critical skill</span> for researchers and professionals in all fields. You can conduct the best research in the world, but if you can't communicate your findings clearly, the impact is lost!</p>
+            
+            <h3>Building on Previous Learning</h3>
+            <p>This unit builds directly on your previous work with:</p>
+            <ul>
+                <li>✅ Summarizing information from sources</li>
+                <li>✅ Paraphrasing scholarly content</li>
+                <li>✅ Synthesizing information from diverse sources</li>
+            </ul>
+            
+            <h3>What's New This Week?</h3>
+            <p>You'll learn to:</p>
+            <ul>
+                <li>🔍 Interpret <strong>quantitative data</strong> (numbers, statistics, measurements)</li>
+                <li>📊 Use appropriate tools and techniques for analysis</li>
+                <li>📝 Present data in structured, clear formats</li>
+                <li>🎯 Aim for deeper understanding for your intended audience</li>
+            </ul>
+            
+            <div class="example-box">
+                <strong>📌 Example Scenario:</strong> Imagine you surveyed 500 students about study habits. You have all the data, but now you need to: (1) analyze what it means, (2) identify patterns, and (3) write a report that helps university administrators make informed decisions about study resource allocation.
+            </div>
+        </div>
+
+        <!-- Slide 6: Understanding Research Methods -->
+        <div class="slide">
+            <h1>🔬 Understanding Research Methods</h1>
+            
+            <h2>What Are Research Methods?</h2>
+            <p>Research methods are <span class="highlight">systematic procedures</span> used to collect, analyze, and interpret information to answer research questions.</p>
+            
+            <h3>Types of Research Methods:</h3>
+            
+            <table>
+                <tr>
+                    <th>Method Type</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td><strong>Quantitative</strong></td>
+                    <td>Uses numerical data and statistical analysis</td>
+                    <td>Surveys with rating scales, test scores, time measurements</td>
+                </tr>
+                <tr>
+                    <td><strong>Qualitative</strong></td>
+                    <td>Uses descriptive data like words, observations, interviews</td>
+                    <td>Open-ended interviews, focus groups, case studies</td>
+                </tr>
+                <tr>
+                    <td><strong>Mixed Methods</strong></td>
+                    <td>Combines both quantitative and qualitative approaches</td>
+                    <td>Survey with rating scales + follow-up interviews</td>
+                </tr>
+            </table>
+            
+            <h3>How to Determine the Suitable Method?</h3>
+            <ul>
+                <li><strong>Consider your research question:</strong> What type of answer do you need?</li>
+                <li><strong>Think about your resources:</strong> Time, budget, access to participants</li>
+                <li><strong>Match method to goal:</strong> Testing a hypothesis? Use quantitative. Understanding experiences? Use qualitative.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 7: Analyzing the Data -->
+        <div class="slide">
+            <h1>📊 Analyzing the Data</h1>
+            
+            <h2>What Does Data Analysis Mean?</h2>
+            <p>Data analysis is the process of examining, cleaning, transforming, and interpreting data to discover useful information and support decision-making.</p>
+            
+            <h3>Steps in Data Analysis:</h3>
+            <ol>
+                <li><strong>Organize Your Data</strong>
+                    <ul>
+                        <li>Clean and prepare data (remove errors, incomplete responses)</li>
+                        <li>Categorize information logically</li>
+                    </ul>
+                </li>
+                <li><strong>Describe the Data</strong>
+                    <ul>
+                        <li>Calculate descriptive statistics (mean, median, mode)</li>
+                        <li>Identify patterns and trends</li>
+                    </ul>
+                </li>
+                <li><strong>Visualize the Data</strong>
+                    <ul>
+                        <li>Create charts, graphs, or tables</li>
+                        <li>Make complex information easier to understand</li>
+                    </ul>
+                </li>
+                <li><strong>Interpret Results</strong>
+                    <ul>
+                        <li>What do the numbers actually mean?</li>
+                        <li>What conclusions can you draw?</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <div class="example-box">
+                <strong>📌 Example:</strong> If you survey students about daily study time and find the average is 3.5 hours, that's descriptive. But when you analyze that students who study 4+ hours score 15% higher on exams, that's interpretation—you've discovered a meaningful relationship!
+            </div>
+        </div>
+
+        <!-- Slide 8: Drawing Conclusions & Reporting Results -->
+        <div class="slide">
+            <h1>✍️ Drawing Conclusions & Reporting Results</h1>
+            
+            <h2>Drawing Conclusions</h2>
+            <p>A conclusion is your <span class="highlight">interpretation</span> of what the data means in relation to your research question.</p>
+            
+            <h3>Good Conclusions Are:</h3>
+            <ul>
+                <li>✅ Based on evidence from your data</li>
+                <li>✅ Directly related to your research objectives</li>
+                <li>✅ Clear and specific (avoid vague statements)</li>
+                <li>✅ Honest about limitations</li>
+                <li>✅ Connected to broader context or implications</li>
+            </ul>
+            
+            <h3>Reporting Results</h3>
+            <p>When reporting results, you need to:</p>
+            <ul>
+                <li><strong>State findings clearly:</strong> "The data shows that..."</li>
+                <li><strong>Provide evidence:</strong> Include specific numbers, percentages, statistics</li>
+                <li><strong>Explain significance:</strong> "This finding suggests that..."</li>
+                <li><strong>Address unexpected results:</strong> Don't hide surprises—explain them!</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>⚠️ Avoid These Mistakes:</strong>
+                <ul>
+                    <li>❌ Overgeneralizing from limited data</li>
+                    <li>❌ Confusing correlation with causation</li>
+                    <li>❌ Ignoring data that doesn't support your hypothesis</li>
+                    <li>❌ Making claims without sufficient evidence</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 9: Analyzing Charts - The Pie Chart -->
+        <div class="slide">
+            <h1>📈 Analyzing Charts: Understanding Pie Charts</h1>
+            
+            <h2>What Is a Pie Chart?</h2>
+            <p>A pie chart is a circular graph divided into slices to illustrate <span class="highlight">proportions</span> or <span class="highlight">percentages</span> of a whole. Each slice represents a category's contribution to the total.</p>
+            
+            <h3>How to Read a Pie Chart:</h3>
+            <ol>
+                <li><strong>Identify the whole:</strong> What does the entire pie represent?</li>
+                <li><strong>Look at slice sizes:</strong> Larger slices = larger percentages</li>
+                <li><strong>Read the labels:</strong> What does each slice represent?</li>
+                <li><strong>Check the numbers:</strong> Look at percentages or values</li>
+                <li><strong>Compare slices:</strong> Which categories are largest? Smallest?</li>
+            </ol>
+            
+            <h3>Key Questions to Ask:</h3>
+            <ul>
+                <li>What is the largest category? What does this suggest?</li>
+                <li>Are there any surprising proportions?</li>
+                <li>How do categories compare to each other?</li>
+                <li>What patterns or trends can you identify?</li>
+                <li>What's missing or not represented?</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 Analysis Tip:</strong> Don't just describe what you see—explain what it MEANS. For example, instead of "8.8 hours are spent sleeping," say "Sleep accounts for more than one-third of the average weekday, highlighting the importance of adequate rest for student productivity."
+            </div>
+        </div>
+
+        <!-- Slide 10: Your Assignment - The Pie Chart Analysis -->
+        <div class="slide">
+            <h1>📊 Your Assignment: Analyzing Time Use Data</h1>
+            
+            <h2>The Task</h2>
+            <p>You will analyze the pie chart titled <strong>"Time use on an average weekday for full-time university and college students"</strong> from the U.S. Bureau of Labor Statistics.</p>
+            
+            <h3>What the Chart Shows:</h3>
+            <ul>
+                <li><strong>Total:</strong> 24.0 hours (one full day)</li>
+                <li><strong>Categories include:</strong>
+                    <ul>
+                        <li>Sleeping (8.8 hours)</li>
+                        <li>Leisure and sports (4.0 hours)</li>
+                        <li>Educational activities (3.5 hours)</li>
+                        <li>Working and related activities (2.3 hours)</li>
+                        <li>Eating and drinking (1.0 hour)</li>
+                        <li>Grooming (0.8 hour)</li>
+                        <li>Traveling (1.4 hours)</li>
+                        <li>Other (2.2 hours)</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>Your Job:</h3>
+            <p>Write a formal report (350-750 words) that:</p>
+            <ol>
+                <li>Describes the data presented in the chart</li>
+                <li>Analyzes patterns and significant findings</li>
+                <li>Interprets what these findings mean</li>
+                <li>Draws meaningful conclusions</li>
+            </ol>
+        </div>
+
+        <!-- Slide 11: Writing Your Report - Structure -->
+        <div class="slide">
+            <h1>📝 Writing Your Report: Structure</h1>
+            
+            <h2>Formal Report Components</h2>
+            
+            <h3>1. Title</h3>
+            <p>Create a clear, descriptive title that indicates what your report is about.</p>
+            <div class="example-box">
+                <strong>Example:</strong> "Analysis of Time Allocation Among Full-Time University Students: Findings from U.S. Bureau of Labor Statistics Data"
+            </div>
+            
+            <h3>2. Introduction (2-3 sentences)</h3>
+            <ul>
+                <li>Introduce the topic and purpose</li>
+                <li>State what data you're analyzing</li>
+                <li>Mention the source</li>
+            </ul>
+            <div class="example-box">
+                <strong>Example:</strong> "This report analyzes time allocation patterns among full-time university and college students in the United States. The analysis is based on data from the U.S. Bureau of Labor Statistics' American Time Use Survey, which tracked how students spend an average weekday. Understanding these patterns provides insights into student priorities and lifestyle challenges."
+            </div>
+            
+            <h3>3. Body (Main Analysis)</h3>
+            <ul>
+                <li><strong>Paragraph 1:</strong> Overview of the data</li>
+                <li><strong>Paragraph 2:</strong> Major findings and patterns</li>
+                <li><strong>Paragraph 3:</strong> Analysis and interpretation</li>
+                <li><strong>Paragraph 4:</strong> Comparisons and relationships between categories</li>
+            </ul>
+            
+            <h3>4. Conclusion (2-3 sentences)</h3>
+            <ul>
+                <li>Summarize key findings</li>
+                <li>State the significance or implications</li>
+                <li>Suggest areas for further research (optional)</li>
+            </ul>
+        </div>
+
+        <!-- Slide 12: Writing Your Report - Content Tips -->
+        <div class="slide">
+            <h1>✍️ Writing Your Report: Content Tips</h1>
+            
+            <h2>What to Include in Your Analysis</h2>
+            
+            <h3>Describe the Data:</h3>
+            <ul>
+                <li>What categories are represented?</li>
+                <li>What are the specific values/percentages?</li>
+                <li>What is the source and context?</li>
+            </ul>
+            
+            <h3>Analyze Patterns:</h3>
+            <ul>
+                <li>Which activities take up the most time?</li>
+                <li>Which activities take up the least time?</li>
+                <li>Are there any surprising findings?</li>
+                <li>What relationships exist between categories?</li>
+            </ul>
+            
+            <h3>Interpret Meaning:</h3>
+            <ul>
+                <li>What do these patterns suggest about student life?</li>
+                <li>Are students balancing their time well?</li>
+                <li>What might be concerning or positive?</li>
+                <li>How might this impact academic performance or well-being?</li>
+            </ul>
+            
+            <div class="example-box">
+                <strong>📌 Strong Analysis Example:</strong> "The data reveals that students spend only 3.5 hours on educational activities—less than half the time devoted to leisure and sports (4.0 hours). This disparity raises questions about study effectiveness and time management. However, when combined with the 2.3 hours spent on work-related activities, students dedicate nearly 6 hours to productive pursuits, suggesting a need to balance academic, professional, and personal development."
+            </div>
+        </div>
+
+        <!-- Slide 13: Writing Style & Tone -->
+        <div class="slide">
+            <h1>🎭 Writing Style & Tone for Reports</h1>
+            
+            <h2>Formal vs. Informal Communication</h2>
+            
+            <h3>Characteristics of Formal Reports:</h3>
+            <ul>
+                <li><strong>Objective tone:</strong> Focus on facts, not opinions</li>
+                <li><strong>Third person:</strong> Avoid "I" or "we" (use "the data shows" instead of "I found")</li>
+                <li><strong>Professional language:</strong> No slang or conversational phrases</li>
+                <li><strong>Clear and precise:</strong> Use specific terms and accurate descriptions</li>
+                <li><strong>Well-organized:</strong> Logical flow with transitions</li>
+                <li><strong>Evidence-based:</strong> Support claims with data</li>
+            </ul>
+            
+            <h3>Do's and Don'ts:</h3>
+            
+            <table>
+                <tr>
+                    <th>❌ Don't Write</th>
+                    <th>✅ Do Write</th>
+                </tr>
+                <tr>
+                    <td>"I think students spend way too much time chilling."</td>
+                    <td>"The data indicates that students allocate 4.0 hours to leisure and sports activities."</td>
+                </tr>
+                <tr>
+                    <td>"It's crazy how little they study!"</td>
+                    <td>"Students devote only 3.5 hours to educational activities, which represents 14.6% of their day."</td>
+                </tr>
+                <tr>
+                    <td>"They should probably sleep less."</td>
+                    <td>"Sleep accounts for 8.8 hours (36.7% of the day), which aligns with recommended sleep duration for young adults."</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Slide 14: Effective Communication in Reports -->
+        <div class="slide">
+            <h1>💬 Effective Communication in Formal Settings</h1>
+            
+            <h2>Methods of Communication in Formal Settings</h2>
+            <ul>
+                <li><strong>Written Reports:</strong> Detailed documents for documentation and decision-making</li>
+                <li><strong>Presentations:</strong> Visual and oral communication of findings</li>
+                <li><strong>Memos:</strong> Brief internal communications</li>
+                <li><strong>Executive Summaries:</strong> Condensed overviews for busy stakeholders</li>
+                <li><strong>Data Visualizations:</strong> Charts, graphs, infographics</li>
+            </ul>
+            
+            <h2>How to Make Communication More Effective</h2>
+            <ol>
+                <li><strong>Know Your Audience</strong>
+                    <ul>
+                        <li>What do they already know?</li>
+                        <li>What do they need to know?</li>
+                        <li>What level of detail is appropriate?</li>
+                    </ul>
+                </li>
+                <li><strong>Use Clear Structure</strong>
+                    <ul>
+                        <li>Introduction → Body → Conclusion</li>
+                        <li>Logical flow of ideas</li>
+                        <li>Headings and subheadings</li>
+                    </ul>
+                </li>
+                <li><strong>Support With Evidence</strong>
+                    <ul>
+                        <li>Cite sources properly</li>
+                        <li>Use specific data points</li>
+                        <li>Provide context for numbers</li>
+                    </ul>
+                </li>
+                <li><strong>Be Concise Yet Complete</strong>
+                    <ul>
+                        <li>Include all necessary information</li>
+                        <li>Eliminate unnecessary words</li>
+                        <li>Use precise language</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Slide 15: Benefits of Effective Communication -->
+        <div class="slide">
+            <h1>🌟 Benefits of Effective Communication</h1>
+            
+            <h2>Why Does Effective Communication Matter?</h2>
+            
+            <h3>Professional Benefits:</h3>
+            <ul>
+                <li>✅ <strong>Better Decision-Making:</strong> Clear information leads to informed choices</li>
+                <li>✅ <strong>Increased Credibility:</strong> Professional communication builds trust</li>
+                <li>✅ <strong>Career Advancement:</strong> Essential skill for leadership roles</li>
+                <li>✅ <strong>Efficient Collaboration:</strong> Teams work better with clear communication</li>
+                <li>✅ <strong>Problem-Solving:</strong> Complex issues become manageable when well-explained</li>
+            </ul>
+            
+            <h3>Academic Benefits:</h3>
+            <ul>
+                <li>✅ <strong>Higher Grades:</strong> Clear writing demonstrates understanding</li>
+                <li>✅ <strong>Better Research:</strong> Proper reporting advances knowledge</li>
+                <li>✅ <strong>Stronger Arguments:</strong> Evidence-based communication is persuasive</li>
+                <li>✅ <strong>Knowledge Sharing:</strong> Your findings can help others learn</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 Remember:</strong> The goal of any report is not just to present data, but to create UNDERSTANDING. Your readers should finish your report knowing something valuable they didn't know before!
+            </div>
+        </div>
+
+        <!-- Slide 16: Assignment Requirements Checklist -->
+        <div class="slide">
+            <h1>✅ Assignment Requirements Checklist</h1>
+            
+            <h2>Before You Submit, Make Sure You Have:</h2>
+            
+            <h3>Content Requirements:</h3>
+            <ul>
+                <li>☐ Analyzed the pie chart from U.S. Bureau of Labor Statistics</li>
+                <li>☐ Written 350-750 words (not including title and references)</li>
+                <li>☐ Included clear introduction, body, and conclusion</li>
+                <li>☐ Described the data accurately</li>
+                <li>☐ Analyzed patterns and trends</li>
+                <li>☐ Interpreted the significance of findings</li>
+                <li>☐ Drew meaningful conclusions</li>
+            </ul>
+            
+            <h3>Format Requirements:</h3>
+            <ul>
+                <li>☐ Double-spaced throughout</li>
+                <li>☐ Times New Roman font, 12-point</li>
+                <li>☐ Proper title at the top</li>
+                <li>☐ Professional, formal tone</li>
+                <li>☐ No spelling or grammar errors</li>
+            </ul>
+            
+            <h3>Source Requirements:</h3>
+            <ul>
+                <li>☐ Cited the U.S. Bureau of Labor Statistics source</li>
+                <li>☐ Used additional high-quality, credible sources if needed</li>
+                <li>☐ Included proper in-text citations</li>
+                <li>☐ Created a reference list (if multiple sources used)</li>
+                <li>☐ Followed proper citation format</li>
+            </ul>
+        </div>
+
+        <!-- Slide 17: Information Literacy & Sources -->
+        <div class="slide">
+            <h1>📚 Information Literacy & Finding Sources</h1>
+            
+            <h2>Using High-Quality, Credible Sources</h2>
+            
+            <h3>What Makes a Source Credible?</h3>
+            <ul>
+                <li><strong>Authority:</strong> Written by experts in the field</li>
+                <li><strong>Accuracy:</strong> Information can be verified</li>
+                <li><strong>Currency:</strong> Recently published or updated</li>
+                <li><strong>Purpose:</strong> Intended to inform or educate (not persuade or sell)</li>
+                <li><strong>Coverage:</strong> Provides comprehensive information</li>
+            </ul>
+            
+            <h3>Where to Find Quality Sources:</h3>
+            <ul>
+                <li>🏫 University of the People Library</li>
+                <li>📖 Course textbooks and readings</li>
+                <li>🔬 Government databases (like Bureau of Labor Statistics)</li>
+                <li>📰 Peer-reviewed academic journals</li>
+                <li>📊 Reputable research organizations</li>
+            </ul>
+            
+            <h3>Need Help Finding Sources?</h3>
+            <div class="tip-box">
+                <strong>📧 Contact the Librarian:</strong> library@uopeople.edu
+                <br><br>
+                <strong>💬 Visit the Learning Resource Center:</strong> Get expert help with research, writing, and citation questions!
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ Avoid:</strong> Wikipedia, personal blogs, social media posts, commercial websites, or sources without clear authors or dates.
+            </div>
+        </div>
+
+        <!-- Slide 18: Assessment Overview -->
+        <div class="slide">
+            <h1>📋 Assessment Overview</h1>
+            
+            <h2>This Week's Assessments</h2>
+            
+            <h3>1. Written Assignment (Report)</h3>
+            <ul>
+                <li><strong>Weight:</strong> Major grade component</li>
+                <li><strong>Due:</strong> Check your course homepage for deadline</li>
+                <li><strong>Submission:</strong> Upload to assignment page</li>
+                <li><strong>Evaluation:</strong> Graded by instructor using rubric</li>
+                <li><strong>Focus:</strong> Analysis of pie chart data in formal report format</li>
+            </ul>
+            
+            <h3>2. Self-Quiz</h3>
+            <ul>
+                <li><strong>Weight:</strong> Does NOT count toward final grade</li>
+                <li><strong>Purpose:</strong> Check your understanding of the material</li>
+                <li><strong>Benefit:</strong> Prepares you for the Graded Quiz</li>
+                <li><strong>Strategy:</strong> Review incorrect answers to improve knowledge</li>
+            </ul>
+            
+            <h3>3. Graded Quiz</h3>
+            <ul>
+                <li><strong>Weight:</strong> Counts toward final grade</li>
+                <li><strong>Content:</strong> Covers all Week 6 materials and readings</li>
+                <li><strong>Access:</strong> Available on main course homepage</li>
+                <li><strong>Preparation:</strong> Complete readings and Self-Quiz first!</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 Pro Tip:</strong> Complete the Self-Quiz first to identify any knowledge gaps, then review those topics before taking the Graded Quiz!
+            </div>
+        </div>
+
+        <!-- Slide 19: Questions -->
+        <div class="slide">
+            <h1>❓ Review Questions</h1>
+            <h2>Test Your Understanding</h2>
+            
+            <div class="question">
+                <strong>Question 1:</strong> What are the three main topics covered in Week 6?
+            </div>
+            
+            <div class="question">
+                <strong>Question 2:</strong> What is the difference between describing data and interpreting data?
+            </div>
+            
+            <div class="question">
+                <strong>Question 3:</strong> Why should you avoid using "I think" or "I believe" in formal reports?
+            </div>
+            
+            <div class="question">
+                <strong>Question 4:</strong> What is the word count requirement for the Week 6 assignment?
+            </div>
+            
+            <div class="question">
+                <strong>Question 5:</strong> According to the pie chart, what activity takes up the most time in a student's weekday?
+            </div>
+            
+            <div class="question">
+                <strong>Question 6:</strong> What are two characteristics of credible sources?
+            </div>
+            
+            <div class="question">
+                <strong>Question 7:</strong> Does the Self-Quiz count toward your final grade?
+            </div>
+        </div>
+
+        <!-- Slide 20: Answers -->
+        <div class="slide">
+            <h1>✅ Answers to Review Questions</h1>
+            
+            <div class="answer">
+                <strong>Answer 1:</strong> The three main topics are: (1) Research discussions and findings, (2) Analyzing charts, and (3) Writing reports.
+            </div>
+            
+            <div class="answer">
+                <strong>Answer 2:</strong> Describing data means stating what the data shows (facts and figures). Interpreting data means explaining what those facts and figures MEAN—their significance, implications, and relationships.
+            </div>
+            
+            <div class="answer">
+                <strong>Answer 3:</strong> Formal reports require an objective, third-person tone. Using "I think" makes the writing subjective and personal rather than professional and evidence-based. Instead, use phrases like "The data indicates..." or "The findings suggest..."
+            </div>
+            
+            <div class="answer">
+                <strong>Answer 4:</strong> The assignment must be at least 350 words and not more than 750 words (not including the reference list or title).
+            </div>
+            
+            <div class="answer">
+                <strong>Answer 5:</strong> Sleeping takes up the most time at 8.8 hours (36.7% of the day).
+            </div>
+            
+            <div class="answer">
+                <strong>Answer 6:</strong> Credible sources have: Authority (written by experts), Accuracy (verifiable information), Currency (recently published), Clear Purpose (to inform/educate), and Comprehensive Coverage. (Any two are acceptable answers.)
+            </div>
+            
+            <div class="answer">
+                <strong>Answer 7:</strong> No, the Self-Quiz does NOT count toward your final grade. However, it's an important learning tool that helps you prepare for the Graded Quiz, which DOES count toward your grade.
+            </div>
+        </div>
+
+        <!-- Slide 21: Resources & Support -->
+        <div class="slide">
+            <h1>🆘 Resources & Support</h1>
+            
+            <h2>Where to Get Help</h2>
+            
+            <h3>Academic Support:</h3>
+            <ul>
+                <li><strong>📚 Course Readings:</strong> Chapter 3, Sections 16-17 (Research Methods textbook)</li>
+                <li><strong>📖 Guidelines for Reports:</strong> Boise State University Writing Guide</li>
+                <li><strong>📧 Librarian:</strong> library@uopeople.edu</li>
+                <li><strong>💬 Learning Resource Center:</strong> Available in your course menu</li>
+            </ul>
+            
+            <h3>Technical Support:</h3>
+            <ul>
+                <li><strong>Assignment Submission Issues:</strong> Contact your instructor</li>
+                <li><strong>Platform Problems:</strong> UoPeople Technical Support</li>
+            </ul>
+            
+            <h3>Writing Support:</h3>
+            <ul>
+                <li>Review APA style guidelines for proper formatting</li>
+                <li>Use spell-check and grammar tools</li>
+                <li>Read your work aloud to catch errors</li>
+                <li>Ask a peer to review your draft</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>💡 Success Strategies:</strong>
+                <ul>
+                    <li>Start early—don't wait until the deadline!</li>
+                    <li>Read the assignment instructions carefully</li>
+                    <li>Review the rubric to understand grading criteria</li>
+                    <li>Proofread multiple times before submitting</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 22: Week 6 Checklist -->
+        <div class="slide">
+            <h1>✅ Week 6 Checklist</h1>
+            <h2>Complete These Tasks in Order</h2>
+            
+            <div style="background-color: #f8f9fa; padding: 30px; border-radius: 10px; margin-top: 30px;">
+                <h3 style="color: #667eea;">Step 1: Learn</h3>
+                <ul>
+                    <li>☐ Read through the complete Learning Guide</li>
+                    <li>☐ Read Chapter 3, Sections 16-17 from the textbook</li>
+                    <li>☐ Review the Guidelines for Reports article</li>
+                    <li>☐ Study the pie chart carefully</li>
+                </ul>
+                
+                <h3 style="color: #667eea; margin-top: 20px;">Step 2: Practice</h3>
+                <ul>
+                    <li>☐ Take the Self-Quiz</li>
+                    <li>☐ Review any incorrect answers</li>
+                    <li>☐ Revisit relevant readings for clarification</li>
+                </ul>
+                
+                <h3 style="color: #667eea; margin-top: 20px;">Step 3: Create</h3>
+                <ul>
+                    <li>☐ Analyze the pie chart data</li>
+                    <li>☐ Write your formal report (350-750 words)</li>
+                    <li>☐ Format according to requirements</li>
+                    <li>☐ Add proper citations and references</li>
+                    <li>☐ Proofread carefully</li>
+                </ul>
+                
+                <h3 style="color: #667eea; margin-top: 20px;">Step 4: Submit</h3>
+                <ul>
+                    <li>☐ Submit your written assignment</li>
+                    <li>☐ Take the Graded Quiz</li>
+                    <li>☐ Check for submission confirmation</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box" style="margin-top: 30px;">
+                <strong>🎯 Final Reminder:</strong> Quality over speed! Take time to do your best work. This assignment builds critical skills you'll use throughout your academic and professional career.
+            </div>
+        </div>
+
+        <!-- Slide 23: Closing -->
+        <div class="slide">
+            <h1>🎓 Week 6 Summary</h1>
+            
+            <h2>What You've Learned Today</h2>
+            <ul>
+                <li>✅ How to analyze quantitative data from charts and graphs</li>
+                <li>✅ Techniques for interpreting research findings</li>
+                <li>✅ Structure and format of formal reports</li>
+                <li>✅ Professional writing style and tone</li>
+                <li>✅ Effective communication strategies</li>
+                <li>✅ How to draw meaningful conclusions from data</li>
+            </ul>
+            
+            <h2>Key Takeaways</h2>
+            <div class="tip-box">
+                <strong>Remember:</strong>
+                <ul>
+                    <li>📊 Data alone doesn't tell the story—your interpretation does!</li>
+                    <li>✍️ Formal reports require objective, evidence-based writing</li>
+                    <li>🎯 Always connect findings to broader significance</li>
+                    <li>📚 Use credible sources to support your analysis</li>
+                    <li>⚖️ Balance description with interpretation</li>
+                </ul>
+            </div>
+            
+            <h2 style="text-align: center; margin-top: 50px; color: #764ba2;">You're Ready to Succeed!</h2>
+            <p style="text-align: center; font-size: 1.2em; margin-top: 20px;">Apply what you've learned, take your time with the assignment, and don't hesitate to reach out if you need support. Good luck!</p>
+            
+            <div class="instructor-info">
+                <p style="font-size: 1.2em; margin-top: 50px;">Questions? Contact Instructor Yogeeta Sharma</p>
+                <p>University of the People</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('total-slides').textContent = totalSlides;
+        
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+            
+            // Update button states
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+            
+            // Scroll to top of slide
+            slides[currentSlide].scrollTop = 0;
+        }
+        
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                if (currentSlide > 0) changeSlide(-1);
+            } else if (event.key === 'ArrowRight') {
+                if (currentSlide < totalSlides - 1) changeSlide(1);
+            }
+        });
+        
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
